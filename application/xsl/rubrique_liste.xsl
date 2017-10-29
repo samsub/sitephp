@@ -4,15 +4,16 @@
     <xsl:import href="commun.xsl"/>
     
     <xsl:template name="js.module.sheet">
+		<link href="front/summernote/summernote.css" rel="stylesheet"/> 
+        <script language="JavaScript" src="front/summernote/summernote.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/gestionrubriques.js" type="text/javascript"/>
     </xsl:template>
     <xsl:template name="Contenu">
 		
 		<div class="row">
 			<input type="hidden" id="retour" name="retour"/>
-			<xsl:call-template name="operationEdition">
-				<xsl:with-param name="numeroCompte" select="$NUMEROCOMPTE"/>
-			</xsl:call-template>
+			<xsl:call-template name="rubriqueEdition"/>
+				
 			<form method="post" action="#" onsubmit="return rechercherOperations(this);" name="recherche" id="recherche">
 				<xsl:call-template name="formulaireJson"/>
 				<!--input type="hidden" id="numeroCompte" name="numeroCompte" value="{$NUMEROCOMPTE}"/>

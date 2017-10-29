@@ -14,7 +14,7 @@ class GestionRubriquesService extends ServiceStub {
 		//$userid = $p_contexte->getUser()->userId;
 		$rubriqueid = $p_contexte->m_dataRequest->getData('rubriqueid');
 		$rubrique = new Rubrique();
-		$rubrique->rubriqueid = 1;
+		$rubrique->rubriqueid = $rubriqueid;
 		$rubrique->load();
 		//$rubrique->contenu = html_entity_decode($news->contenu);
 		$p_contexte->addDataBlockRow($rubrique);
@@ -31,14 +31,14 @@ class GestionRubriquesService extends ServiceStub {
     }
 
     public function update(ContextExecution $p_contexte){
-        $newsid = $p_contexte->m_dataRequest->getData('newsid');
+        $rubriqueid = $p_contexte->m_dataRequest->getData('rubriqueid');
         $contenu = $p_contexte->m_dataRequest->getData('contenu');
-        $news = new News();
-        $news->newsid = $newsid;
-        $news->load();
-        $news->contenu=html_entity_decode($contenu);
-        $news->update();
-		$p_contexte->addDataBlockRow($news);
+        $rubrique = new Rubrique();
+        $rubrique->rubriqueid = $rubriqueid;
+        $rubrique->load();
+        $rubrique->contenu=html_entity_decode($contenu);
+        $rubrique->update();
+		//$p_contexte->addDataBlockRow($rubrique);
     }
 }
 ?>

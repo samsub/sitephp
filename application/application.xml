@@ -75,8 +75,10 @@
 		</domaine>
 		<domaine name="rubrique">
 			<service name="affiche" classe="GestionRubriquesService" methode="getOne" isPrivee="false" xsl="xsl/rubrique_affichage.xsl"/>
+			<service name="getone" classe="GestionRubriquesService" methode="getOne" isPrivee="false" render="json"/>
 			<service name="getpage" classe="GestionRubriquesService" methode="fictive" isPrivee="false" xsl="xsl/rubrique_liste.xsl"/>
 			<service name="getliste" classe="GestionRubriquesService" methode="getListe" isPrivee="false" render="json"/>
+			<service name="update" classe="GestionRubriquesService" methode="update" isPrivee="false" privee="false" render="json"/>
 		</domaine>
 		<domaine name="defaut">
 			<service name="defaut" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>

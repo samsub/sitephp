@@ -124,91 +124,26 @@
     <!--
         édition d'une opération
     -->
-    <xsl:template name="operationEdition">
-        <xsl:param name="numeroCompte"/>
-        <div id="boiteOperation" title="{$LBL.EDITIONOPERATION}" style="display: none;">
-
-            <form method="POST" action="#" onsubmit="return soumettre(this);" name="operation" id="operation">
+    <xsl:template name="rubriqueEdition">
+        <div id="boiteRubrique" title="{$LBL.EDITIONRUBRIQUE}" style="display: none;">
+			<div class="row">
+            <form method="POST" action="#" onsubmit="return soumettre(this);" name="rubrique" id="rubrique">
                 <input type="hidden" name="service" id="service"/>
-                <input type="hidden" id="noCompte" name="noCompte" value="{$numeroCompte}"/>
-                <input type="hidden" name="operationId" id="operationId" value=""/>
-                <div class="container popup_operation">
+                <input type="hidden" name="rubriqueid" id="rubriqueid"/>
+                <div class="popup_operation">
                     <div class="col-lg-12">
                         <div class="form-group row">
-                            <label for="noReleve" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.NUMERORELEVE"/>
+                            <label for="titre" class="form-control-label">
+                                <xsl:value-of select="$LBL.TITRE"/>
                             </label>
-                            <div class="col-sm-6">
-                                <input class="form-control" size="12" name="noReleve" id="noReleve" tabindex="10"/>
-                            </div>
+                            <input class="form-control" size="25" name="titre" id="titre" tabindex="10"/>
                         </div>
                         <div class="form-group row">
-                            <label for="date" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.DATE"/>
+                            <label for="contenu" class="form-control-label">
+                                <xsl:value-of select="$LBL.CONTENU"/>
                             </label>
-                            <div class="col-sm-6">
-                                <input class="form-control" type="text" name="date" id="date" size="11" maxlength="10"
-                                       tabindex="20"/>
-                            </div>
+                            <div id="summernote"/>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="libelle" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.LIBELLE"/>
-                            </label>
-                            <div class="col-sm-6">
-                                <input class="form-control" type="text" size="40" id="libelle" tabindex="30"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="fluxId" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.FLUX"/>
-                            </label>
-                            <div class="col-sm-6">
-                                <select class="form-control obligatoire" name="fluxId" id="fluxId"
-                                        onchange="return getModeReglementDefaut(this, this.form.modePaiementId)"
-                                        tabindex="40"/>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="modePaiementId" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.MODEDEPAIEMENT"/>
-                            </label>
-                            <div class="col-sm-6">
-                                <xsl:call-template name="ModifSelect">
-                                    <xsl:with-param name="value" select="/root/data/Operation/modePaiementId"/>
-                                    <xsl:with-param name="Node" select="/root/paramFlow/MODPAI"/>
-                                    <xsl:with-param name="nom" select="'modePaiementId'"/>
-                                    <xsl:with-param name="defaultValue" select="''"/>
-                                    <xsl:with-param name="defaultDisplay" select="''"/>
-                                    <xsl:with-param name="optionVide" select="'O'"/>
-                                    <xsl:with-param name="tabindex" select="'50'"/>
-                                </xsl:call-template>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="fluxId" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.MONTANT"/>
-                            </label>
-                            <div class="col-sm-6">
-                                <input class="form-control obligatoire numerique" size="7" name="montant" id="montant"
-                                       onblur="return isDouble(this);" tabindex="60"/>
-                            </div>
-                        </div>
-
-                        <!--div class="form-group row">
-                            <label for="fluxId" class="col-sm-6 form-control-label">
-                                <xsl:value-of select="$LBL.VERIFICATION"/>
-                            </label>
-                            <div class="col-sm-6">
-                                <input class="form-control" type="checkbox" name="verif" id="verif" checked="Verif"
-                                       tabindex="70"/>
-                            </div>
-                        </div-->
-
                         <div class="row">
                             <div class="col-xs-4"/>
                             <div class="form-group row">
@@ -220,6 +155,7 @@
                     </div>
                 </div>
             </form>
+			</div>
         </div>
     </xsl:template>
 

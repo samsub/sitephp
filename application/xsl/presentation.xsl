@@ -11,12 +11,12 @@
 				<xsl:attribute name="onload">
 					<xsl:call-template name="onLoadTemplate"/>
 				</xsl:attribute>
-				
+
 				<br/>
 				<div class="container">
 					<!-- bannière -->
 					<div class="row">
-						<div class="col-xs-2"><span class="align-middle"><img src="front/images/Logo Hippo.jpg" width="180px"/></span>
+						<div class="col-xs-2"><span class="align-middle"><img src="front/images/samsub.gif" width="180px"/></span>
 						</div>
 						<div class="col-xs-8">image ou nom du site...
 						</div>
@@ -26,21 +26,30 @@
 					<!-- menu -->
 					<xsl:call-template name="BarreMenu"/>
 					<div class="row">
-					<div class="col-sm-10 cadre_bord_rond">
-						<xsl:call-template name="Contenu"/>
+					<div class="col-sm-9 cadre_bord_rond">
+
+							<xsl:call-template name="Contenu"/>
+
 					</div>
-					<div class="col-sm-2"  style="background-color:#FFAAAA;">
-						partie utilisateur
+					<aside>
+						<div class="col-sm-3">
+							<div class="cadre_bord_rond">
+								<xsl:call-template name="LiensUtiles"/>
+							</div>
+						</div>
+					</aside>
+				</div>
+
+				<div class="row">
+					<!--div class="col-xs-4"></div-->
+					<div class="col-xs-12 cadre_bord_rond">
+						<br/>
+						<p style="text-align:center;">Copyright © 2017 Subaquatique Sam Subaquatique Mérignac Bordeaux - Tous droits réservés</p>
+						<br/>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-xs-4"></div>
-				<div class="col-xs-4" style="background-color:#FFBBAA;">pied de page
-				</div>
-			</div>
-				
-				
+
 			</body>
 		</html>
 	</xsl:template>
@@ -75,12 +84,12 @@
 					<xsl:value-of select="'PhpMyBudget'"/>
 				</xsl:choose>
 			</title>
-			
+
 			<link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap.min.css" rel="stylesheet"/>
 			<link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
 
 			<link href="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
-			
+
 			<script type="text/javascript" src="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/external/jquery/jquery.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/js/bootstrap.min.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/jquery-ui.min.js" charset="iso-8859-1">&#160;</script>
@@ -89,9 +98,9 @@
 			<script type="text/javascript" src="front/js/communFormulaire.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/js/dateFormat.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/js/communJson.js" charset="iso-8859-1">&#160;</script>
-			
+
 			<script type="text/javascript" src="front/js/core_ajax.js" charset="iso-8859-1">&#160;</script>
-			
+
 			<!-- plugins -->
 			<link href="front/css/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
 			<script type="text/javascript" src="front/js/jquery.multiselect.js" charset="iso-8859-1">&#160;</script>
@@ -108,20 +117,27 @@
 			<div class="col-xs-8">
 				<nav class="navbar navbar-default">
 				  <div class="container-fluid">
-					
+
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					  <ul class="nav navbar-nav">
 						<!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li-->
-						<li><a href="#">Accueil</a></li>
+						<!--li><a href="#">Accueil</a></li-->
+						<li class="dropdown">
+						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accueil<span class="caret"></span></a>
+						  <ul class="dropdown-menu">
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=3">Qui sommes-nous?</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=7">L'historique du Sam subaquatique</a></li>
+						  </ul>
+						</li>
 						<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=1">Tarifs et inscriptions</a></li>
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Club<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
-							<li><a href="#">L'encadrement</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=2">L'encadrement</a></li>
 							<li><a href="#">Infos pratiques</a></li>
-							<li><a href="#">Agenda de la Sub</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=4">Agenda de la Sub</a></li>
 						  </ul>
 						</li>
 						<!--li class="dropdown">
@@ -139,14 +155,13 @@
 						  </ul>
 						</li-->
 					  </ul>
-					  
+
 					  <ul class="nav navbar-nav navbar-right">
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
-							<li><a href="#">L'encadrement</a></li>
-							<li><a href="#">Infos pratiques</a></li>
-							<li><a href="#">Agenda de la Sub</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=2">Nous contacter</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=9">Nous localiser</a></li>
 						  </ul>
 						</li>
 						<li class="dropdown">
@@ -163,6 +178,13 @@
 			</div>
 		</div>
 	</xsl:template>
+	<xsl:template name="LiensUtiles">
+		<h2 style="text-align:center;">Liens Utiles</h2>
+		<a href="http://www.ffessm.fr" class="list-group-item list-lien" target="blank">FFESSM (siteofficiel)</a>
+		<a href="#" class="list-group-item list-lien" target="blank">Commission Technique Nationale</a>
+		<br/>
+	</xsl:template>
+
 	<xsl:template name="controleMenu">O</xsl:template>
 	<xsl:template name="onLoadTemplate"/>
 </xsl:stylesheet>

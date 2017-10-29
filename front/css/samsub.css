@@ -6,7 +6,8 @@ body {
 	/*font-size: 12px;*/
 	background-image: url("../images/Bulles-dair.jpeg");
 	background-repeat: no-repeat;
-    background-attachment: fixed;
+	background-size: 100%;
+  background-attachment: fixed;
 	font-family: verdana, geneva, sans-serif;
 	font-size: 12pt;
 }
@@ -14,6 +15,12 @@ body {
 h2 {
 	font-size: 14pt;
 	font-weight: bold;
+}
+
+h3 {
+	font-size: 24pt;
+	font-weight: bold;
+	text-align:center;
 }
 
 p {
@@ -29,4 +36,64 @@ li {
 .cadre_bord_rond {
 	border-radius: 5px;
 	background-color:#FFFFFF;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.mini-submenu{
+  display:none;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 4px;
+  padding: 9px;
+  /*position: relative;*/
+  width: 42px;
+
+}
+
+.mini-submenu:hover{
+  cursor: pointer;
+}
+
+.mini-submenu .icon-bar {
+  border-radius: 1px;
+  display: block;
+  height: 2px;
+  width: 22px;
+  margin-top: 3px;
+}
+
+.mini-submenu .icon-bar {
+  background-color: #000;
+}
+
+#slide-submenu{
+  background: rgba(0, 0, 0, 0.45);
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.colonne_droite {
+	margin-left: 15px;
+}
+
+.list-lien {
+  position: relative;
+  display: block;
+  padding: 0px;
+  // Place the border on the list items and negative margin up for better styling
+  margin-bottom: -1px;
+  background-color: @list-group-bg;
+  border: 1px solid @list-group-border;
+
+  // Round the first and last items
+  &:first-child {
+    .border-top-radius(@list-group-border-radius);
+  }
+  &:last-child {
+    margin-bottom: 0;
+    .border-bottom-radius(@list-group-border-radius);
+  }
 }

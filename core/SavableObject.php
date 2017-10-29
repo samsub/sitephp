@@ -29,7 +29,7 @@ abstract class SavableObject extends Objects {
 	private function getChamps(){
 		$table=array();
 		$pdo = ConnexionPDO::getInstance ();
-		$l_requete = 'SHOW COLUMNS FROM ' . $this->_tableName;
+		$l_requete = 'SHOW COLUMNS FROM ' . strtolower($this->_tableName);
 		$l_result = $pdo->query ( $l_requete );
 		while ( $l_champs = $l_result->fetch ( PDO::FETCH_ASSOC ) ) {
 			//$this->logger->debug($l_champs ['Field']);
@@ -62,7 +62,7 @@ abstract class SavableObject extends Objects {
      */
     public function load() {
         $primaryKey = implode(' AND ', $this->getPrimaryKeyValorisee());
-        $requete = "SELECT * FROM $this->_tableName WHERE $primaryKey";
+        $requete = 'SELECT * FROM '.strtolower($this->_tableName) ." WHERE $primaryKey";
 		$this->logger->debug('requete load:' . $requete);
         $stmt = null;
         try {
@@ -109,7 +109,7 @@ abstract class SavableObject extends Objects {
 				}
             }
         }
-		$query = sprintf("INSERT INTO %s (%s) VALUES (%s)", $this->_tableName, implode(',', $champs), implode(',', $values));
+		$query = sprintf("INSERT INTO %s (%s) VALUES (%s)", strtolower($this->_tableName), implode(',', $champs), implode(',', $values));
 		
 		try {
             $this->logger->debug('requete create:' . $query);
