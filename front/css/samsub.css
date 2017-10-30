@@ -1,4 +1,7 @@
 
+@couleur_fond:#EEEEEE;
+
+
 body {
 	width:100%;
 	margin-right: auto;
@@ -10,6 +13,11 @@ body {
   background-attachment: fixed;
 	font-family: verdana, geneva, sans-serif;
 	font-size: 12pt;
+}
+
+.container {
+	/*background-color: @couleur_fond;*/
+	border-radius: 5px;
 }
 
 h2 {
@@ -35,14 +43,14 @@ li {
 
 .cadre_bord_rond {
 	border-radius: 5px;
-	background-color:#FFFFFF;
+	background-color:@couleur_fond;
 	padding-right: 5px;
 	padding-left: 5px;
 }
 
 .mini-submenu{
   display:none;
-  background-color: rgba(0, 0, 0, 0);
+  /*background-color: rgba(0, 0, 0, 0);*/
   border: 1px solid rgba(0, 0, 0, 0.9);
   border-radius: 4px;
   padding: 9px;
@@ -79,12 +87,12 @@ li {
 	margin-left: 15px;
 }
 
-.list-lien {
+/*.list-lien {
   position: relative;
   display: block;
   padding: 0px;
   // Place the border on the list items and negative margin up for better styling
-  margin-bottom: -1px;
+  //margin-bottom: -1px;
   background-color: @list-group-bg;
   border: 1px solid @list-group-border;
 
@@ -96,4 +104,14 @@ li {
     margin-bottom: 0;
     .border-bottom-radius(@list-group-border-radius);
   }
+}*/
+
+.list-group-item {
+	background-color: #EEEEEE;
+}
+
+.img_samsub{
+    position: relative;
+    top: 25%;
+    transform: translateY(25%);
 }

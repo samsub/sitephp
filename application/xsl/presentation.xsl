@@ -16,7 +16,7 @@
 				<div class="container">
 					<!-- bannière -->
 					<div class="row">
-						<div class="col-xs-2"><span class="align-middle"><img src="front/images/samsub.gif" width="180px"/></span>
+						<div class="col-xs-2 img_samsub"><span class="align-middle"><img src="front/images/samsub.gif" width="180px"/></span>
 						</div>
 						<div class="col-xs-8">image ou nom du site...
 						</div>
@@ -44,7 +44,7 @@
 					<!--div class="col-xs-4"></div-->
 					<div class="col-xs-12 cadre_bord_rond">
 						<br/>
-						<p style="text-align:center;">Copyright © 2017 Subaquatique Sam Subaquatique Mérignac Bordeaux - Tous droits réservés</p>
+						<p style="text-align:center;">Copyright © 2017 Sam Subaquatique Mérignac - Tous droits réservés</p>
 						<br/>
 					</div>
 				</div>
@@ -106,7 +106,8 @@
 			<script type="text/javascript" src="front/js/jquery.multiselect.js" charset="iso-8859-1">&#160;</script>
 
 			<!--link href="front/css/bootstrap-force.css" rel="stylesheet" type="text/css"/-->
-			<link href="front/css/samsub.css" rel="stylesheet" type="text/css"/>
+			<link href="front/css/samsub.css" rel="stylesheet/less" type="text/css"/>
+			<script type="text/javascript" src="front/lessjs/lessjs.js" charset="iso-8859-1">&#160;</script>
 			<xsl:call-template name="js.module.sheet"/>
 		</head>
 	</xsl:template>
