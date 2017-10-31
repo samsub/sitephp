@@ -36,5 +36,13 @@ class GestionNewsService extends ServiceStub {
         $news->update();
 		$p_contexte->addDataBlockRow($news);
     }
+	
+	public function getListe(ContextExecution $p_contexte){
+        $requete = "SELECT newsid, titre, datepublication, contenu FROM news";
+		$listeLibelles = new ListDynamicObject();
+		$listeLibelles->name = 'ListeLibelles';
+		$listeLibelles->request($requete, 1);
+		$p_contexte->addDataBlockRow($listeLibelles);
+    }
 }
 ?>

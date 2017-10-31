@@ -167,7 +167,7 @@
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=news&amp;service=getone">Saisie news</a></li>
+							<li><a href="index.php?domaine=news&amp;service=getpage">Saisie news</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
 						  </ul>
 						</li>

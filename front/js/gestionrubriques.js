@@ -41,7 +41,7 @@ function editerRubrique(rubriqueid) {
 	var params="&rubriqueid="+rubriqueid;
 
 	var hauteur = 600;
-	var largeur = 1100;
+	var largeur = 1170;
 
 	$.getJSON(
 		"index.php?domaine=rubrique&service=getone",

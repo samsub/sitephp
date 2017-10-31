@@ -1,2 +1,4 @@
 mise en page des news
 page admin connexion
+gestion des rubriques
+gestion des news

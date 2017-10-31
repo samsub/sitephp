@@ -2,6 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 	<xsl:variable name="LBL.ACTION">Action</xsl:variable>
 	<xsl:variable name="LBL.ACTIONS">Actions</xsl:variable>
+	<xsl:variable name="LBL.AUTEUR">Auteur</xsl:variable>
 	<!--xsl:variable name="LBL.AFFICHER">Afficher</xsl:variable>
 	<xsl:variable name="LBL.ANNEE">Ann�e</xsl:variable>
 	<xsl:variable name="LBL.ANNEES">Ann�es</xsl:variable>
@@ -16,6 +17,7 @@
 	<xsl:variable name="LBL.CREER">Cr�er</xsl:variable-->
 	<xsl:variable name="LBL.CONTENU">Contenu</xsl:variable>
 	<xsl:variable name="LBL.DATE">Date</xsl:variable>
+	<xsl:variable name="LBL.DATEPUBLICATION">Date publication</xsl:variable>
 	<!--xsl:variable name="LBL.DEBIT">D�bit</xsl:variable>
 	<xsl:variable name="LBL.DECONNEXION">D�connexion</xsl:variable>
 	<xsl:variable name="LBL.DEPENSE">D�pense</xsl:variable>
