@@ -70,6 +70,7 @@
 			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>
 		</domaine>
 		<domaine name="news">
+			<service name="affiche" classe="GestionNewsService" methode="fictive" isPrivee="false"  xsl="xsl/news_liste.xsl" privee="false"/>
 			<service name="getone" classe="GestionNewsService" methode="getOne" isPrivee="false"  xsl="xsl/news.xsl" privee="false"/>
 			<service name="update" classe="GestionNewsService" methode="update" isPrivee="false" privee="false" render="json"/>
 		</domaine>

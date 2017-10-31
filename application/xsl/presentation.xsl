@@ -11,8 +11,6 @@
 				<xsl:attribute name="onload">
 					<xsl:call-template name="onLoadTemplate"/>
 				</xsl:attribute>
-
-				<br/>
 				<div class="container">
 					<!-- bannière -->
 					<div class="row">
@@ -22,9 +20,9 @@
 						</div>
 						<div class="col-xs-2"><img src="front/images/logoSAM201617.jpg"  width="180px"/>
 						</div>
+						<xsl:call-template name="BarreMenu"/>
 					</div>
 					<!-- menu -->
-					<xsl:call-template name="BarreMenu"/>
 					<div class="row">
 					<div class="col-sm-9 cadre_bord_rond">
 
@@ -33,7 +31,7 @@
 					</div>
 					<aside>
 						<div class="col-sm-3">
-							<div class="cadre_bord_rond">
+							<div class="cadre_bord_rond colonne_droite">
 								<xsl:call-template name="LiensUtiles"/>
 							</div>
 						</div>
@@ -128,6 +126,7 @@
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accueil<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
+							<li><a href="index.php?domaine=news&amp;service=affiche">News</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=3">Qui sommes-nous?</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=7">L'historique du Sam subaquatique</a></li>
 						  </ul>
