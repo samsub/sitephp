@@ -2,6 +2,10 @@
 @couleur_fond:#EEEEEE;
 @taille_police:10pt;
 
+/**************************************************************************/
+/* balise html
+/**************************************************************************/
+
 body {
 	width:100%;
 	margin-right: auto;
@@ -14,18 +18,6 @@ body {
 	font-family: verdana, geneva, sans-serif;
 	font-size: @taille_police;
 }
-
-.container {
-	background-color: @couleur_fond;
-	/*border-radius: 5px;*/
-	/*margin-top: 15px;*/
-	/*margin-bottom: 15px;*/
-}
-
-.navbar-default .navbar-nav > li > a {
-	color:#000000;
-}
-
 
 h2 {
 	font-size: 14pt;
@@ -49,6 +41,28 @@ li {
 	line-height: 20px;
 	text-align: justify;
 }
+
+/**************************************************************************/
+/* balise bootstrap
+/**************************************************************************/
+
+
+.container {
+	background-color: @couleur_fond;
+	/*border-radius: 5px;*/
+	/*margin-top: 15px;*/
+	/*margin-bottom: 15px;*/
+}
+
+.navbar-default .navbar-nav > li > a {
+	color:#000000;
+}
+
+
+/**************************************************************************/
+/* balise personnalisée
+/**************************************************************************/
+
 
 .cadre_bord_rond {
 	border-radius: 5px;
@@ -117,6 +131,19 @@ li {
     transform: translateY(25%);
 }
 
+.popup_admin {
+	background-color: #E7E7E7;
+}
+
+#banniere_centre {
+	/*background-image: url("../images/10109161-cabane-tchanquee-pqpak-fotoliacom.jpg");*/
+	background-image: url("../images/banniere.png");
+	background-size: 100%;
+}
+
+/**************************************************************************/
+/* balises news
+/**************************************************************************/
 .titre_news {
 	text-decoration: none;
 	clear: both;

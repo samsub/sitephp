@@ -13,16 +13,26 @@
 				</xsl:attribute>
 				<div class="container">
 					<!-- bannière -->
-					<div class="row">
-						<div class="col-xs-2 img_samsub"><span class="align-middle"><img src="front/images/samsub.gif" width="180px"/></span>
+					<div class="row" id="banniere_centre">
+						<div class="col-xs-12"><br/></div>
+						<!--div class="col-xs-2"><span class="align-middle"><img src="front/images/LogoSUB.png" width="180px"/></span-->
+						<div class="col-xs-2"><span class="align-middle"><img src="front/images/logo_t.png" width="180px"/></span>
 						</div>
-						<div class="col-xs-8">image ou nom du site...
+						<div class="col-xs-8" id="banniere_centre">
 						</div>
-						<div class="col-xs-2"><img src="front/images/logoSAM201617.jpg"  width="180px"/>
+						<!--div class="col-xs-2" style="background-color=#FFFFFF"><img src="front/images/logoSAM201617.jpg"  width="180px"/-->
+						<div class="col-xs-2" style="background-color=#FFFFFF"><img src="front/images/logo_sam_t.png"  width="180px"/>
 						</div>
+						<div class="col-xs-12"><br/></div>
+						<div class="col-xs-12"><br/></div>
+						<div class="col-xs-12"><br/></div>
 						<xsl:call-template name="BarreMenu"/>
-					</div>
+						<!--div class="col-xs-12"><br/></div>
+						<div class="col-xs-12"><br/></div-->
 					<!-- menu -->
+					<div class="row">
+						</div>
+					</div>
 					<div class="row">
 					<div class="col-sm-9 cadre_bord_rond">
 
@@ -30,6 +40,7 @@
 
 					</div>
 					<aside>
+						<br/>
 						<div class="col-sm-3">
 							<div class="cadre_bord_rond colonne_droite">
 								<xsl:call-template name="LiensUtiles"/>

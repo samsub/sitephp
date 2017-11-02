@@ -49,7 +49,7 @@ function editerRubrique(rubriqueid) {
 		function(json){
 			document.rubrique.service.value='update';
 			document.rubrique.rubriqueid.value=json[0].rubriqueid;
-			document.rubrique.titre.value=json[0].Titre;
+			document.rubrique.titre.value=json[0].titre;
 			//document.rubrique.contenu.value=json[0].contenu;
 			//$('#summernote').html(json[0].contenu).text()
 			$('#summernote').summernote('destroy');
@@ -74,14 +74,15 @@ function soumettre(form) {
 	if(!validForm(form)) {
 		return false;
 	}
-	var params = "rubriqueid="+form.rubriqueid.value+"&contenu="+$('#summernote').summernote('code');
+	var params = "rubriqueid="+form.rubriqueid.value+"&titre="+form.titre.value+"&contenu="+$('#summernote').summernote('code');
 	var service = form.service.value;
 	$.ajax({
 		url:"index.php?domaine=rubrique&service=update",
 		data:params,
 		method:'POST',
 		dataType: 'json',
-		function(json){
+		success: function(json){
+			$("div#boiteRubrique").dialog('close');
 			alimenterRubriques();
 			return false;
 		}

@@ -36,9 +36,6 @@
 						</label>
 						<input type="text" id="recDate" name="recDate" class="form-control numerique" size="10"/>
 					</div>
-
-
-
 					<br/>
 				</aside>
 			</form>

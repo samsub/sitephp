@@ -6,7 +6,7 @@ class Rubrique extends SavableObject {
 	}
 	public $rubriqueid=NULL;
 	
-	public $Titre;
+	public $titre;
 	
 	public $contenu;
 	

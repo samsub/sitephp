@@ -36,6 +36,7 @@ class GestionRubriquesService extends ServiceStub {
         $rubrique = new Rubrique();
         $rubrique->rubriqueid = $rubriqueid;
         $rubrique->load();
+        $rubrique->fieldObject($p_contexte->m_dataRequest);
         $rubrique->contenu=html_entity_decode($contenu);
         $rubrique->update();
 		//$p_contexte->addDataBlockRow($rubrique);

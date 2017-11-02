@@ -8,6 +8,14 @@ class News extends SavableObject {
 	
 	public $titre;
 	
+	public $auteur;
+	
+	public $datepublication;
+	
+	public $datefinpublication;
+	
+	public $etatpublication;
+	
 	public $contenu;
 	
 }

@@ -5,13 +5,8 @@
 
     <xsl:template name="Contenu">
         <br/>
-        <h3><xsl:value-of select="/root/data/Rubrique/Titre"/></h3>
+        <h3><xsl:value-of select="/root/data/Rubrique/titre"/></h3>
         <br/>
 		<xsl:value-of select="/root/data/Rubrique/contenu" disable-output-escaping="yes"/>
-    </xsl:template>
-	<xsl:template name="js.module.sheet">
-		<!--link href="front/summernote/summernote.css" rel="stylesheet"/>
-        <script language="JavaScript" src="front/summernote/summernote.js" type="text/javascript"/>
-        <script language="JavaScript" src="front/js/gestionnews.js" type="text/javascript"/-->
     </xsl:template>
 </xsl:stylesheet>
