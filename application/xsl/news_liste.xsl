@@ -13,7 +13,7 @@
     <xsl:template name="Contenu">
 		<div class="row">
 			<div class="col-sm-3">
-				<input type="button" onclick="editernews('');" value="Créer une news"></input>
+				<input type="button" onclick="editernews('');" class="btn btn-primary" value="Créer une news"></input>
 				<table class="table table-striped table-bordered" name="tableauResultat" id="tableauResultat">
 					<thead>
 						<tr>
