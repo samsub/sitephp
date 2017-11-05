@@ -15,6 +15,9 @@ define('CHEMIN_LOGERREUR', './logs/');
 define('LIGNE_PAR_PAGE', 20);
 define('RACINE_DATA', 'data/projets');
 
+define('RACINE_SITE', __DIR__);
+
+
 $pageControl = new PageControl();
 $pageControl->process();
 $fin = microtime(true);

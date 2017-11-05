@@ -2,26 +2,34 @@
 <configuration>
 	<domaines>
 		<domaine name="technique">
-			<service name="login" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>
-			<service name="connexion" classe="Login" methode="connexion" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>
-			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>
+			<service name="login" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl"/>
+			<service name="connexion" classe="Login" methode="connexion" isPrivee="false"  xsl="xsl/login.xsl"/>
+			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="true"  xsl="xsl/login.xsl"/>
+		</domaine>
+		<domaine name="mail">
+			<service name="contact" classe="Factice" methode="fictive" isPrivee="false"  xsl="xsl/mail_formulaire.xsl"/>
+			<service name="envoi" classe="GestionMailContactService" methode="envoiMail" isPrivee="false" render="json"/>
+		</domaine>
+		<domaine name="media">
+			<service name="uploadImage" classe="GestionMediaService" methode="uploadImage" isPrivee="false" render="json"/>
 		</domaine>
 		<domaine name="news">
-			<service name="affiche" classe="GestionNewsService" methode="fictive" isPrivee="false"  xsl="xsl/news_affiche.xsl" privee="false"/>
-			<service name="getliste" classe="GestionNewsService" methode="getListe" isPrivee="false" render="json"/>
-			<service name="getpage" classe="GestionNewsService" methode="fictive" isPrivee="false" xsl="xsl/news_liste.xsl"/>
-			<service name="getone" classe="GestionNewsService" methode="getOne" isPrivee="false"  xsl="xsl/news.xsl" privee="false"/>
-			<service name="update" classe="GestionNewsService" methode="update" isPrivee="false" privee="false" render="json"/>
+			<service name="affiche" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl"/>
+			<service name="create" classe="GestionNewsService" methode="create" isPrivee="true" render="json"/>
+			<service name="getliste" classe="GestionNewsService" methode="getListe" isPrivee="true" render="json"/>
+			<service name="getpage" classe="GestionNewsService" methode="fictive" isPrivee="true" xsl="xsl/news_liste.xsl"/>
+			<service name="getone" classe="GestionNewsService" methode="getOne" isPrivee="true"  render="json"/>
+			<service name="update" classe="GestionNewsService" methode="update" isPrivee="true" render="json"/>
 		</domaine>
 		<domaine name="rubrique">
 			<service name="affiche" classe="GestionRubriquesService" methode="getOne" isPrivee="false" xsl="xsl/rubrique_affichage.xsl"/>
-			<service name="getone" classe="GestionRubriquesService" methode="getOne" isPrivee="false" render="json"/>
-			<service name="getpage" classe="GestionRubriquesService" methode="fictive" isPrivee="false" xsl="xsl/rubrique_liste.xsl"/>
-			<service name="getliste" classe="GestionRubriquesService" methode="getListe" isPrivee="false" render="json"/>
-			<service name="update" classe="GestionRubriquesService" methode="update" isPrivee="false" privee="false" render="json"/>
+			<service name="getone" classe="GestionRubriquesService" methode="getOne" isPrivee="true" render="json"/>
+			<service name="getpage" classe="GestionRubriquesService" methode="fictive" isPrivee="true" xsl="xsl/rubrique_liste.xsl"/>
+			<service name="getliste" classe="GestionRubriquesService" methode="getListe" isPrivee="true" render="json"/>
+			<service name="update" classe="GestionRubriquesService" methode="update" isPrivee="true" render="json"/>
 		</domaine>
 		<domaine name="defaut">
-			<service name="defaut" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl" privee="false"/>
+			<service name="defaut" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl"/>
 		</domaine>
 	</domaines>
 </configuration>

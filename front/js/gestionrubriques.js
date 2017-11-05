@@ -26,9 +26,6 @@ function alimenterRubriques() {
 			for(i=0; i<nb; i++) {
 				var row = $('<tr typetr="rubrique"/>');
 				row.append($('<td/>').text(tabJson[i].titre));
-				row.append($('<td/>'));
-
-
 				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editerRubrique(\''+ tabJson[i].rubriqueid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
 
 				$("#tbodyResultat").append(row);
@@ -55,14 +52,20 @@ function editerRubrique(rubriqueid) {
 			$('#summernote').summernote('destroy');
 			$('#summernote').html(json[0].contenu);
 			$('#summernote').summernote({
-				height: 250
+				height: 450,
+				callbacks: {
+					onImageUpload: function(files, editor, welEditable) {
+						sendFile(files[0],$('#summernote'),welEditable);
+					}
+				}
 			});
-			$("div#boiteRubrique").dialog({
+			$( "#divFormulaire").show();
+			/*$("div#boiteRubrique").dialog({
 				resizable: false,
 				height:hauteur,
 				width:largeur,
 				modal: true
-			});
+			});*/
 		}
 	);
 }
@@ -82,7 +85,8 @@ function soumettre(form) {
 		method:'POST',
 		dataType: 'json',
 		success: function(json){
-			$("div#boiteRubrique").dialog('close');
+			//$("div#boiteRubrique").dialog('close');
+			$( "#divFormulaire").hide();
 			alimenterRubriques();
 			return false;
 		}
@@ -90,14 +94,6 @@ function soumettre(form) {
 	return false;
 }
 
-function enregistreNews() {
-	var params = "newsid=1&contenu="+$('#summernote').summernote('code');
-	$.ajax({
-		url:"index.php?domaine=news&service=update",
-		data:params,
-		method:'POST',
-		function(json){
-
-		}
-	});
+function fermerFormulaire() {
+	$( "#divFormulaire").hide();
 }

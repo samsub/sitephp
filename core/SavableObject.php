@@ -141,7 +141,7 @@ abstract class SavableObject extends Objects {
                 }
             }
         }
-		$query = sprintf("UPDATE %s SET %s WHERE %s", $this->_tableName, implode(',', $set), $primaryKey);
+		$query = sprintf("UPDATE %s SET %s WHERE %s", strtolower($this->_tableName), implode(',', $set), $primaryKey);
 		
 		try {
             $this->logger->debug('requete update:' . $query);
@@ -155,7 +155,7 @@ abstract class SavableObject extends Objects {
      * fonction de suppression en base d'un objet
      */
     public function delete() {
-        $requete = "DELETE FROM $this->_tableName WHERE " . implode(' AND ', $this->getPrimaryKeyValorisee());
+        $requete = 'DELETE FROM '.strtolower($this->_tableName). 'WHERE ' . implode(' AND ', $this->getPrimaryKeyValorisee());
         $this->logger->debug('delete:' . $requete);
         try {
             $stmt = self::$_pdo->query($requete);

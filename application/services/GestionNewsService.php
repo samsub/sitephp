@@ -7,23 +7,24 @@ class GestionNewsService extends ServiceStub {
 	}
 
 	public function getOne(ContextExecution $p_contexte){
-		//$userid = $p_contexte->getUser()->userId;
+		$newsid = $p_contexte->m_dataRequest->getData('newsid');
 		//$numeroCompte = $p_contexte->m_dataRequest->getData('numeroCompte');
 		$news = new News();
-		$news->newsid = 1;
+		$news->newsid = $newsid;
 		$news->load();
 		$news->contenu = html_entity_decode($news->contenu);
 		$p_contexte->addDataBlockRow($news);
 	}
 
 	public function create(ContextExecution $p_contexte){
-        /*$userid = $p_contexte->getUser()->userId;
-        $numeroCompte = $p_contexte->m_dataRequest->getData('numeroCompte');
-        $compte = new Comptes();
-        $compte->numeroCompte = $numeroCompte;
-        $compte->userId = $userid;
-        $compte->fieldObject($p_contexte->m_dataRequest);
-        $compte->create();*/
+        $userid = $p_contexte->getUser()->userId;
+        
+        $news = new News();
+        $news->auteur = $userid;
+        $news->fieldObject($p_contexte->m_dataRequest);
+		$news->contenu=html_entity_decode($contenu);
+        $news->create();
+		$p_contexte->ajoutReponseAjaxOK();
     }
 
     public function update(ContextExecution $p_contexte){
@@ -32,9 +33,11 @@ class GestionNewsService extends ServiceStub {
         $news = new News();
         $news->newsid = $newsid;
         $news->load();
+		$news->fieldObject($p_contexte->m_dataRequest);
         $news->contenu=html_entity_decode($contenu);
         $news->update();
-		$p_contexte->addDataBlockRow($news);
+		//$p_contexte->addDataBlockRow($news);
+		$p_contexte->ajoutReponseAjaxOK();
     }
 	
 	public function getListe(ContextExecution $p_contexte){
@@ -44,5 +47,22 @@ class GestionNewsService extends ServiceStub {
 		$listeLibelles->request($requete, 1);
 		$p_contexte->addDataBlockRow($listeLibelles);
     }
+	
+	public function affiche(ContextExecution $p_contexte){
+		
+		$auteur = new ListObject();
+        $auteur->name='Auteur';
+        $l_clause=' userid=$parent->auteur'; 
+        $auteur->setAssociatedRequest('Membre', $l_clause);
+        //$p_contexte->addDataBlockRow($listePeriode);
+		
+		$listeNews = new ListObject();
+		$listeNews->name = 'NewsListe';
+		$listeNews->setAssociatedKey($auteur);
+		$clause = ' 1=1 ORDER BY datepublication DESC';
+		$listeNews->request('News', $clause);
+		$p_contexte->addDataBlockRow($listeNews);
+	}
+	
 }
 ?>

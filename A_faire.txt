@@ -1,4 +1,11 @@
-mise en page des news
-page admin connexion
-gestion des rubriques
-gestion des news
+mise en page des news				-> ok
+transfert news						-> ok
+Qui sommes-nous?					-> ok
+formulaire de contact				-> ok
+
+
+page admin connexion				->ok
+
+
+gestion des rubriques				->ok
+gestion des news					->ok

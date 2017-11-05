@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<!--xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes" /-->
+	<xsl:output indent="yes" method="html" omit-xml-declaration="yes" />
 	<!--regle principal-->
 	<xsl:template match="/">
-		<html>
+		<xsl:variable name="affichageLateral">
+			<xsl:call-template name="affichageLateral"/>
+		</xsl:variable>
+		<!--xsl:value-of select="'&lt;!DOCTYPE html&gt;'"  disable-output-escaping="yes"/-->
+		<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
+		<html lang="fr">
 			<!-- entête HTML -->
 			<xsl:call-template name="Header">
 				<xsl:with-param name="HeadTitre"><xsl:value-of select="/root/titre"/></xsl:with-param>
@@ -16,13 +24,9 @@
 					<div class="row" id="banniere_centre">
 						<div class="col-xs-12"><br/></div>
 						<!--div class="col-xs-2"><span class="align-middle"><img src="front/images/LogoSUB.png" width="180px"/></span-->
-						<div class="col-xs-2"><span class="align-middle"><img src="front/images/logo_t.png" width="180px"/></span>
-						</div>
-						<div class="col-xs-8" id="banniere_centre">
-						</div>
-						<!--div class="col-xs-2" style="background-color=#FFFFFF"><img src="front/images/logoSAM201617.jpg"  width="180px"/-->
-						<div class="col-xs-2" style="background-color=#FFFFFF"><img src="front/images/logo_sam_t.png"  width="180px"/>
-						</div>
+						<div class="col-xs-2"><img src="front/images/logo_t.png" width="180px" alt="logo sub"/></div>
+						<div class="col-xs-8"><br/></div>
+						<div class="col-xs-2"><img src="front/images/logo_sam_t.png"  width="180px" alt="logo sam"/></div>
 						<div class="col-xs-12"><br/></div>
 						<div class="col-xs-12"><br/></div>
 						<div class="col-xs-12"><br/></div>
@@ -30,34 +34,39 @@
 						<!--div class="col-xs-12"><br/></div>
 						<div class="col-xs-12"><br/></div-->
 					<!-- menu -->
-					<div class="row">
-						</div>
+						<div class="row"><br/></div>
 					</div>
-					<div class="row">
-					<div class="col-sm-9 cadre_bord_rond">
-
-							<xsl:call-template name="Contenu"/>
-
-					</div>
-					<aside>
-						<br/>
-						<div class="col-sm-3">
-							<div class="cadre_bord_rond colonne_droite">
-								<xsl:call-template name="LiensUtiles"/>
+					
+					<xsl:choose>
+						<xsl:when test="$affichageLateral='O'">
+							<div class="row">
+								<div class="col-sm-9">
+									<xsl:call-template name="Contenu"/>
+								</div>
+								<aside>
+									<br/>
+									<div class="col-sm-3">
+										<div class="cadre_bord_rond colonne_droite">
+											<xsl:call-template name="LiensUtiles"/>
+										</div>
+									</div>
+								</aside>
 							</div>
-						</div>
-					</aside>
-				</div>
+						</xsl:when>
+						<xsl:otherwise>
+							<xsl:call-template name="Contenu"/>
+						</xsl:otherwise>
+					</xsl:choose>
 
-				<div class="row">
-					<!--div class="col-xs-4"></div-->
-					<div class="col-xs-12 cadre_bord_rond">
-						<br/>
-						<p style="text-align:center;">Copyright © 2017 Sam Subaquatique Mérignac - Tous droits réservés</p>
-						<br/>
+					<div class="row">
+						<!--div class="col-xs-4"></div-->
+						<div class="col-xs-12 cadre_bord_rond">
+							<br/>
+							<p style="text-align:center;">Copyright © 2017 Sam Subaquatique Mérignac - Tous droits réservés</p>
+							<br/>
+						</div>
 					</div>
 				</div>
-			</div>
 
 			</body>
 		</html>
@@ -78,21 +87,14 @@
 	<xsl:template name="Header">
 		<xsl:param name="HeadTitre"/>
 		<head>
+			<title>Samsubaquatique</title>
 			<meta content="text/html;charset=UTF-8" http-equiv="content-type"/>
-			<meta NAME="DESCRIPTION" CONTENT="PhpMyBudget"/>
-			<meta NAME="KEYWORDS" CONTENT="gestion compte"/>
+			<meta NAME="DESCRIPTION" CONTENT="Samsubaquatique"/>
+			<meta NAME="KEYWORDS" CONTENT="site web"/>
 			<meta http-equiv="Pragma" content="no-cache"/>
 			<meta http-equiv="Cache-Control" content="no-cache"/>
 			<meta http-equiv="Expires" content="0"/>
 			<meta http-equiv="X-UA-Compatible" content="IE=8"/>
-			<title>
-				<xsl:choose>
-				<xsl:when test="$HeadTitre!=''">
-					<xsl:value-of select="$HeadTitre"/>
-				</xsl:when>
-					<xsl:value-of select="'PhpMyBudget'"/>
-				</xsl:choose>
-			</title>
 
 			<link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap.min.css" rel="stylesheet"/>
 			<link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
@@ -123,7 +125,7 @@
 	<!-- banniere -->
 	<xsl:template name="BarreMenu">
 		<div class="row">
-			<div class="col-xs-2"></div>
+			<div class="col-xs-2"><br/></div>
 			<div class="col-xs-8">
 				<nav class="navbar navbar-default">
 				  <div class="container-fluid">
@@ -147,7 +149,7 @@
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Club<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
 							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=2">L'encadrement</a></li>
-							<li><a href="#">Infos pratiques</a></li>
+							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=8">Infos pratiques</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=4">Agenda de la Sub</a></li>
 						  </ul>
 						</li>
@@ -171,10 +173,11 @@
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=2">Nous contacter</a></li>
+							<li><a href="index.php?domaine=mail&amp;service=contact&amp;rubriqueid=2">Nous contacter</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=9">Nous localiser</a></li>
 						  </ul>
 						</li>
+						<xsl:if test="/root/user/userId!=''">
 						<li class="dropdown">
 						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
 						  <ul class="dropdown-menu">
@@ -182,6 +185,7 @@
 							<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
 						  </ul>
 						</li>
+						</xsl:if>
 					  </ul>
 					</div><!-- /.navbar-collapse -->
 				  </div><!-- /.container-fluid -->
@@ -196,6 +200,6 @@
 		<br/>
 	</xsl:template>
 
-	<xsl:template name="controleMenu">O</xsl:template>
+	<xsl:template name="affichageLateral">O</xsl:template>
 	<xsl:template name="onLoadTemplate"/>
 </xsl:stylesheet>

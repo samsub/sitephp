@@ -47,6 +47,13 @@ class PageControl {
 				header('Location: index.php');
 				die();
 			}
+		} else {
+			if(isset($_SESSION['userid'])){
+				$user = new Users();
+				$user->userId = $_SESSION['userid'];
+				$user->load();
+				$contexte->setUser($user);
+			}
 		}
 		
 		try {

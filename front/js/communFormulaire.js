@@ -83,3 +83,14 @@ function validForm(pForm) {
 	return true;
 }
 
+function validationFormulaire(pForm) {
+	//$('#new_user_form input, #new_user_form select').each(function(key, value) {
+	$($(pForm).prop('elements')).each(function(indice, objet){
+		//this
+		if( $(objet).attr('required') && $(objet).val() =='') {
+			alert('Champs obligatoire!!!');
+			return false;
+		}
+	});
+	return true;
+}

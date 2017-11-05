@@ -139,6 +139,7 @@ li {
 	/*background-image: url("../images/10109161-cabane-tchanquee-pqpak-fotoliacom.jpg");*/
 	background-image: url("../images/banniere.png");
 	background-size: 100%;
+	background-repeat: no-repeat;
 }
 
 /**************************************************************************/
@@ -165,5 +166,9 @@ li {
 }
 
 .contenu_news {
-	margin-top:20px;
+	margin-top:5px;
+	margin-bottom:5px;
+	border-width:1px;
+	border-bottom-style: dashed;
+	border-bottom-color: black;
 }

@@ -1,10 +1,6 @@
 $(document).ready(function() {
-	//$('#summernote').val($('#summernote').val().html());
-	/*$('#summernote').html($('#summernote').text()).text()
-	$('#summernote').summernote({
-		height: 250
-	});*/
 	alimenterNews();
+	$( "#datepublication" ).datepicker();
 });
 
 function alimenterNews() {
@@ -26,10 +22,8 @@ function alimenterNews() {
 			for(i=0; i<nb; i++) {
 				var row = $('<tr typetr="news"/>');
 				row.append($('<td/>').text(tabJson[i].titre));
-				row.append($('<td/>'));
-
-
-				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editerRubrique(\''+ tabJson[i].rubriqueid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
+				
+				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editernews(\''+ tabJson[i].newsid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
 
 				$("#tbodyResultat").append(row);
 			}
@@ -37,15 +31,74 @@ function alimenterNews() {
 	});
 }
 
+function editernews(newsid) {
+	var params="&newsid="+newsid;
 
-/*function enregistreNews() {
-	/*var params = "newsid=1&contenu="+$('#summernote').summernote('code');
+	if(newsid=='') {
+		document.news.service.value='create';
+		document.news.newsid.value='';
+		document.news.titre.value='';
+		document.news.datepublication.value='';
+		$('#summernote').summernote('destroy');
+		$('#summernote').html('');
+		$('#summernote').summernote({
+			height: 450,
+			callbacks: {
+				onImageUpload: function(files, editor, welEditable) {
+					sendFile(files[0],$('#summernote'),welEditable);
+				}
+			}
+		});
+		$( "#divFormulaire").show();
+	} else {
+		$.getJSON(
+			"index.php?domaine=news&service=getone",
+			data=params,
+			function(json){
+				document.news.service.value='update';
+				document.news.newsid.value=json[0].newsid;
+				document.news.titre.value=json[0].titre;
+				document.news.datepublication.value=json[0].datepublication;
+				$('#summernote').summernote('destroy');
+				$('#summernote').html(json[0].contenu);
+				$('#summernote').summernote({
+					height: 450,
+					callbacks: {
+						onImageUpload: function(files, editor, welEditable) {
+							sendFile(files[0],$('#summernote'),welEditable);
+						}
+					}
+				});
+				$( "#divFormulaire").show();
+			}
+		);
+	}
+}
+
+/******************************************************/
+// soumettre
+/******************************************************/
+function soumettre(form) {
+	var service = form.service.value;
 	$.ajax({
-		url:"index.php?domaine=news&service=update",
-		data:params,
+		url:"index.php?domaine=news&service="+service,
+		data: {
+			newsid: $("#newsid").val(),
+			titre: $("#titre").val(),
+			datepublication: $("#datepublication").val(),
+			contenu: $('#summernote').summernote('code')
+		},
 		method:'POST',
-		function(json){
-
+		dataType: 'json',
+		success: function(json){
+			$( "#divFormulaire").hide();
+			alimenterNews();
+			return false;
 		}
 	});
-}*/
+	return false;
+}
+
+function fermerFormulaire() {
+	$( "#divFormulaire").hide();
+}

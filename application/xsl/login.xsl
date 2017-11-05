@@ -4,7 +4,7 @@
     <xsl:template name="controleMenu">N</xsl:template>
     <xsl:template name="onLoadTemplate">
         <xsl:if test="/root/user/userId!=''">
-            document.location.href='index.php?domaine=compte&amp;service=getpage';
+            document.location.href='index.php';
         </xsl:if>
     </xsl:template>
 
