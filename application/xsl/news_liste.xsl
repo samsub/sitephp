@@ -46,7 +46,7 @@
 							</div>
 							<div class="col-sm-3">
 								<label class="col-form-label" for="etatpublication">Visibilite</label><br/>
-								<input class="custom-control-input" size="40" name="etatpublication" id="etatpublication" tabindex="20" type="checkbox"/>
+								<input class="custom-control-input" size="40" name="etatpublication" id="etatpublication" tabindex="30" type="checkbox" value="1"/>
 							</div>
 						</div>
 						<div class="row">

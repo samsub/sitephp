@@ -47,6 +47,7 @@ function editernews(newsid) {
 		document.news.service.value='create';
 		document.news.newsid.value='';
 		document.news.titre.value='';
+		$("input[name=etatpublication]").attr('checked', '');
 		document.news.datepublication.value='';
 		$('#summernote').summernote('destroy');
 		$('#summernote').html('');
@@ -70,7 +71,9 @@ function editernews(newsid) {
 				document.news.titre.value=json[0].titre;
 				document.news.datepublication.value=json[0].datepublication;
 				if (json[0].etatpublication==1) {
-					$("#etatpublication").attr('checked', 'checked');
+					$("input[name=etatpublication]").attr('checked', 'checked');
+				} else {
+					$("input[name=etatpublication]").attr('checked', false);
 				}
 				//on supprime et on ouvre l'éditeur
 				$('#summernote').summernote('destroy');
