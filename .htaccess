@@ -1,0 +1,6 @@
+Options FollowSymLinks
+RewriteEngine on
+RewriteRule ^rubrique-([[a-z\-]+)-([0-9]+)\.html$ /samsub/index.php?domaine=rubrique&service=affiche&rubriqueid=$2
+RewriteRule ^news.html$ /samsub/index.php?domaine=news&service=affiche
+RewriteRule ^index.html$ /samsub/index.php
+RewriteRule ^administration.html$ /samsub/index.php?domaine=technique&service=login

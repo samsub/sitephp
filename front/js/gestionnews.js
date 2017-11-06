@@ -3,6 +3,10 @@ $(document).ready(function() {
 	$( "#datepublication" ).datepicker();
 });
 
+/******************************************************/
+// alimenterNews
+// alimente le tableau des news
+/******************************************************/
 function alimenterNews() {
 
 	$.ajax({
@@ -31,6 +35,11 @@ function alimenterNews() {
 	});
 }
 
+/******************************************************/
+// editernews
+// permet d'afficher le formulaire pour créer ou
+// modifier une news
+/******************************************************/
 function editernews(newsid) {
 	var params="&newsid="+newsid;
 
@@ -44,6 +53,7 @@ function editernews(newsid) {
 		$('#summernote').summernote({
 			height: 450,
 			callbacks: {
+				//callback d'upload d'image
 				onImageUpload: function(files, editor, welEditable) {
 					sendFile(files[0],$('#summernote'),welEditable);
 				}
@@ -59,11 +69,16 @@ function editernews(newsid) {
 				document.news.newsid.value=json[0].newsid;
 				document.news.titre.value=json[0].titre;
 				document.news.datepublication.value=json[0].datepublication;
+				if (json[0].etatpublication==1) {
+					$("#etatpublication").attr('checked', 'checked');
+				}
+				//on supprime et on ouvre l'éditeur
 				$('#summernote').summernote('destroy');
 				$('#summernote').html(json[0].contenu);
 				$('#summernote').summernote({
 					height: 450,
 					callbacks: {
+						//callback d'upload d'image
 						onImageUpload: function(files, editor, welEditable) {
 							sendFile(files[0],$('#summernote'),welEditable);
 						}
@@ -77,21 +92,26 @@ function editernews(newsid) {
 
 /******************************************************/
 // soumettre
+// permet d'enregistrer une news en création et 
+// modification
 /******************************************************/
 function soumettre(form) {
-	var service = form.service.value;
+	
 	$.ajax({
-		url:"index.php?domaine=news&service="+service,
+		url:"index.php?domaine=news&service="+form.service.value,
 		data: {
 			newsid: $("#newsid").val(),
 			titre: $("#titre").val(),
 			datepublication: $("#datepublication").val(),
+			etatpublication: $("#etatpublication").is(':checked'),
 			contenu: $('#summernote').summernote('code')
 		},
 		method:'POST',
 		dataType: 'json',
 		success: function(json){
-			$( "#divFormulaire").hide();
+			//fermeture du formulaire
+			fermerFormulaire();
+			//mise à jour de la liste des news
 			alimenterNews();
 			return false;
 		}

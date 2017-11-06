@@ -44,6 +44,10 @@
 								<label class="col-form-label" for="titre">Date de publication</label>
 								<input class="form-control" size="40" name="datepublication" id="datepublication" tabindex="20" type="date" required="required"/>
 							</div>
+							<div class="col-sm-3">
+								<label class="col-form-label" for="etatpublication">Visibilite</label><br/>
+								<input class="custom-control-input" size="40" name="etatpublication" id="etatpublication" tabindex="20" type="checkbox"/>
+							</div>
 						</div>
 						<div class="row">
 							<div class="col-sm-12">

@@ -9,3 +9,6 @@ page admin connexion				->ok
 
 gestion des rubriques				->ok
 gestion des news					->ok
+
+
+alter datefinpublication à null

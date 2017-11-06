@@ -99,11 +99,22 @@ abstract class SavableObject extends Objects {
 					
 				} else {
 					$champs[] = $col;
-					if(stripos($champDefinition['Type'], 'date') === 0 || stripos($champDefinition['Type'], 'varchar') === 0) {
+					if(stripos($champDefinition['Type'], 'varchar') === 0) {
+						//type VARCHAR
 						$values[] = trim(self::$_pdo->quote($val));
 					} else if(stripos($champDefinition['Type'], 'longtext') === 0) {
+						//type LOnGTEXT
 						$values[] = trim(self::$_pdo->quote($val));
+					} else if(stripos($champDefinition['Type'], 'date') === 0){
+						//type DATE
+						if($val=='') {
+							$values[] = 'null';
+						} else {
+							$values[] = trim(self::$_pdo->quote($val));
+						}
 					} else {
+						//type AUTRE
+						$this->logger->debug('Type non géréen create:' . $champDefinition['Type']);
 						$values[] = $val=='' ? 0 : $val;
 					}
 				}
@@ -131,11 +142,22 @@ abstract class SavableObject extends Objects {
 				if (array_search($col, $tabKey) === false) {
                     $champDefinition = $this->champsDef[$col];
 					$this->logger->debug('type:' . $champDefinition['Type']);
-					if(stripos($champDefinition['Type'], 'date') === 0 || stripos($champDefinition['Type'], 'varchar') === 0) {
+					if(stripos($champDefinition['Type'], 'varchar') === 0) {
+						//type VARCHAR
 						$set[] = sprintf("%s=%s", $col, trim(self::$_pdo->quote($val)));
 					} else if(stripos($champDefinition['Type'], 'longtext') === 0) {
+						//type LONGTEXT
 						$set[] = sprintf("%s=%s", $col, trim(self::$_pdo->quote($val)));
+					} else if (stripos($champDefinition['Type'], 'date') === 0) {
+						//type DATE
+						if($val=='') {
+							$set[] = sprintf("%s=%s", $col, 'null');
+						} else {
+							$set[] = sprintf("%s=%s", $col, trim(self::$_pdo->quote($val)));
+						}
 					} else {
+						//type AUTRE
+						$this->logger->debug('Type non géréen update:' . $champDefinition['Type']);
 						$set[] = sprintf("%s=%s", $col, $val=='' ? 0 : $val);
 					}
                 }

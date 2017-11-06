@@ -196,7 +196,14 @@
 	<xsl:template name="LiensUtiles">
 		<h2 style="text-align:center;">Liens Utiles</h2>
 		<a href="http://www.ffessm.fr" class="list-group-item list-lien" target="blank">FFESSM (siteofficiel)</a>
-		<a href="#" class="list-group-item list-lien" target="blank">Commission Technique Nationale</a>
+		<a href="http://www.plongee-cias.org" class="list-group-item list-lien" target="blank">CIALPC</a>
+		<a href="http://www.plongee-gironde.org" class="list-group-item list-lien" target="blank">CODEP 33</a>
+		<a href="https://tiv.ffessm.fr" class="list-group-item list-lien" target="blank">Application TIV</a>
+		<a href="http://www.plongee-hendaye.net" class="list-group-item list-lien" target="blank">Base fédérale d'Hendaye</a>
+		<a href="http://www.oceanobs.fr" class="list-group-item list-lien" target="blank">Océan OBS</a>
+		<a href="http://maree.info/135" class="list-group-item list-lien" target="blank">Marée info Cap Ferret</a>
+		<a href="http://www.cabinet-lafont.com" class="list-group-item list-lien" target="blank">Lafont assurances</a>
+		<a href="https://www.longitude181.org/la-charte" class="list-group-item list-lien" target="blank">La charte du plongeur responsable</a>
 		<br/>
 	</xsl:template>
 

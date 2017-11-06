@@ -18,10 +18,14 @@ class GestionNewsService extends ServiceStub {
 
 	public function create(ContextExecution $p_contexte){
         $userid = $p_contexte->getUser()->userId;
-        
+        $contenu = $p_contexte->m_dataRequest->getData('contenu');
         $news = new News();
         $news->auteur = $userid;
         $news->fieldObject($p_contexte->m_dataRequest);
+		/*if($news->datefinpublication=='') {
+			$news->datefinpublication=null;
+		}*/
+		
 		$news->contenu=html_entity_decode($contenu);
         $news->create();
 		$p_contexte->ajoutReponseAjaxOK();
@@ -35,6 +39,9 @@ class GestionNewsService extends ServiceStub {
         $news->load();
 		$news->fieldObject($p_contexte->m_dataRequest);
         $news->contenu=html_entity_decode($contenu);
+		/*if($news->datefinpublication=='') {
+			$news->datefinpublication=null;
+		}*/
         $news->update();
 		//$p_contexte->addDataBlockRow($news);
 		$p_contexte->ajoutReponseAjaxOK();
@@ -59,7 +66,7 @@ class GestionNewsService extends ServiceStub {
 		$listeNews = new ListObject();
 		$listeNews->name = 'NewsListe';
 		$listeNews->setAssociatedKey($auteur);
-		$clause = ' 1=1 ORDER BY datepublication DESC';
+		$clause = ' etatpublication=1 ORDER BY datepublication DESC';
 		$listeNews->request('News', $clause);
 		$p_contexte->addDataBlockRow($listeNews);
 	}
