@@ -16,7 +16,7 @@ define('LIGNE_PAR_PAGE', 20);
 define('RACINE_DATA', 'data/projets');
 
 define('RACINE_SITE', __DIR__);
-define('REPERTOIRE_UPLOAD', './front/upload');
+define('REPERTOIRE_UPLOAD', './upload');
 
 
 $pageControl = new PageControl();
