@@ -11,4 +11,6 @@ gestion des rubriques				->ok
 gestion des news					->ok
 
 
-alter datefinpublication à null
+alter datefinpublication à null ->supprimée
+
+gestion media						->ok

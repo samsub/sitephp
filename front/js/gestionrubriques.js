@@ -1,9 +1,4 @@
 $(document).ready(function() {
-	//$('#summernote').val($('#summernote').val().html());
-	/*$('#summernote').html($('#summernote').text()).text()*/
-	/*$('#summernote').summernote({
-		height: 250
-	});*/
 	alimenterRubriques();
 });
 

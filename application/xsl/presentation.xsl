@@ -183,6 +183,7 @@
 						  <ul class="dropdown-menu">
 							<li><a href="index.php?domaine=news&amp;service=getpage">Saisie news</a></li>
 							<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
+							<li><a href="index.php?domaine=media&amp;service=getpage">Gestion média</a></li>
 						  </ul>
 						</li>
 						</xsl:if>
@@ -199,6 +200,7 @@
 		<a href="http://www.plongee-cias.org" class="list-group-item list-lien" target="blank">CIALPC</a>
 		<a href="http://www.plongee-gironde.org" class="list-group-item list-lien" target="blank">CODEP 33</a>
 		<a href="https://tiv.ffessm.fr" class="list-group-item list-lien" target="blank">Application TIV</a>
+		<a href="https://ffessm.fr/pages_manuel.asp" class="list-group-item list-lien" target="blank">La page du MFT</a>
 		<a href="http://www.plongee-hendaye.net" class="list-group-item list-lien" target="blank">Base fédérale d'Hendaye</a>
 		<a href="http://www.oceanobs.fr" class="list-group-item list-lien" target="blank">Océan OBS</a>
 		<a href="http://maree.info/135" class="list-group-item list-lien" target="blank">Marée info Cap Ferret</a>

@@ -7,11 +7,15 @@
 			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="false"  xsl="xsl/login.xsl"/>
 		</domaine>
 		<domaine name="mail">
-			<service name="contact" classe="Factice" methode="fictive" isPrivee="false"  xsl="xsl/mail_formulaire.xsl"/>
+			<service name="contact" classe="Factice" methode="fictive" isPrivee="false" xsl="xsl/mail_formulaire.xsl"/>
 			<service name="envoi" classe="GestionMailContactService" methode="envoiMail" isPrivee="false" render="json"/>
 		</domaine>
 		<domaine name="media">
-			<service name="uploadImage" classe="GestionMediaService" methode="uploadImage" isPrivee="false" render="json"/>
+			<service name="delete" classe="GestionMediaService" methode="delete" isPrivee="true" render="json"/>
+			<service name="getliste" classe="GestionMediaService" methode="getListe" isPrivee="true" render="json"/>
+			<service name="getpage" classe="Factice" methode="fictive" isPrivee="true" xsl="xsl/media_liste.xsl"/>
+			<service name="uploadImage" classe="GestionMediaService" methode="uploadImage" isPrivee="true" render="json"/>
+			<service name="upload" classe="GestionMediaService" methode="upload" isPrivee="true" render="json"/>
 		</domaine>
 		<domaine name="news">
 			<service name="affiche" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl"/>
