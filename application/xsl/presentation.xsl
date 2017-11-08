@@ -172,6 +172,7 @@
 											<li><a href="index.php?domaine=news&amp;service=getpage">Saisie news</a></li>
 											<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
 											<li><a href="index.php?domaine=media&amp;service=getpage">Gestion média</a></li>
+											<li><a href="index.php?domaine=menu&amp;service=getpage">Gestion menu</a></li>
 										</ul>
 									</li>
 								</ul>
