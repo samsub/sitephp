@@ -8,6 +8,8 @@ class Rubrique extends SavableObject {
 	
 	public $titre;
 	
+	public $url;
+	
 	public $contenu;
 	
 }

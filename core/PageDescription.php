@@ -76,6 +76,11 @@ class PageDescription {
         }
         //lance l'affichage si le rendu est xsl
         if($this->m_render==null || $this->m_render=='xsl'){
+			if(is_file('application/scripts/GenerateurMenu.php')) {
+				//ajout menu
+				$p_contexte->addDataBlockRow(GenerateurMenu::genereMenu());
+			}
+			
             $this->parse($p_contexte);
         }
         if($this->m_render=='json'){

@@ -1,10 +1,10 @@
 <?php
 class Membre extends SavableObject {
-	static private $key='userid';
+	static private $key='';
 	public function getPrimaryKey(){
 		return self::$key;
 	}
-	public $userid=NULL;
+	public $userid;
 	
 	public $nom;
 	

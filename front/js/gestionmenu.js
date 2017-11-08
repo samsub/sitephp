@@ -1,5 +1,8 @@
 $(document).ready(function() {
-	alimenterMedia();
+	    $( "#listeMenuPrimaire" ).sortable({
+      revert: true
+    });
+	//alimenterMenu();
 });
 
 function alimenterMedia() {
@@ -28,42 +31,4 @@ function alimenterMedia() {
 	});
 }
 
-function upload() {
-	
-	var form = $('form').get(0);
-	var file_data = $('#fichier').prop('files')[0]; 
-	var formData = new FormData(form);
-	
-	formData.append('fichier', file_data);
-	
-	$.ajax({
-		type		: 'POST',
-		url		: 'index.php?domaine=media&service=upload',
-		data		: formData,
-		dataType	: 'json',
-		processData: false,
-		contentType: false,
-		success: function(resultat) {
-			$('#fichier').val('');
-			alimenterMedia();
-		}
-	});
-	return false;
-}
 
-function suppmedia(fichier) {
-	var params='fichier='+fichier
-	
-	$.ajax({
-		type		: 'POST',
-		url		: 'index.php?domaine=media&service=delete',
-		data		: {
-			fichier:fichier
-		},
-		dataType	: 'json',
-		success: function(resultat) {
-			alimenterMedia();
-		}
-	});
-	return false;
-}

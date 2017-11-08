@@ -17,6 +17,9 @@
 			<service name="uploadImage" classe="GestionMediaService" methode="uploadImage" isPrivee="true" render="json"/>
 			<service name="upload" classe="GestionMediaService" methode="upload" isPrivee="true" render="json"/>
 		</domaine>
+		<domaine name="menu">
+			<service name="getpage" classe="GestionMenuService" methode="fictive" isPrivee="true" xsl="xsl/menu_liste.xsl"/>
+		</domaine>
 		<domaine name="news">
 			<service name="affiche" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl"/>
 			<service name="create" classe="GestionNewsService" methode="create" isPrivee="true" render="json"/>
