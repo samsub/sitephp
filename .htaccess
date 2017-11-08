@@ -1,6 +1,7 @@
-
+Options FollowSymLinks
 RewriteEngine on
-RewriteRule ^rubrique-([[a-z\-]+)-([0-9]+)\.html$ /samsub/index.php?domaine=rubrique&service=affiche&rubriqueid=$2
+RewriteRule ^rubrique-([0-9]+)-([[a-z\-]+).html$ /samsub/index.php?domaine=rubrique&service=affiche&rubriqueid=$1
+#RewriteRule ^index.html$ /samsub/index.php
+RewriteRule ^administration.html$ /samsub/index.php?domaine=technique&service=login
+RewriteRule ^contacts.html$ /samsub/index.php?domaine=mail&service=contact
 RewriteRule ^news.html$ /samsub/index.php?domaine=news&service=affiche
-RewriteRule ^index.html$ /samsub/index.php
-RewriteRule ^administration.html$ index.php?domaine=technique&service=login

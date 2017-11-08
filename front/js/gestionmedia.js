@@ -57,7 +57,9 @@ function suppmedia(fichier) {
 	$.ajax({
 		type		: 'POST',
 		url		: 'index.php?domaine=media&service=delete',
-		data		: params,
+		data		: {
+			fichier:fichier
+		},
 		dataType	: 'json',
 		success: function(resultat) {
 			alimenterMedia();

@@ -128,68 +128,63 @@
 			<div class="col-xs-2"><br/></div>
 			<div class="col-xs-8">
 				<nav class="navbar navbar-default">
-				  <div class="container-fluid">
+					<div class="container-fluid">
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accueil<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="news.html">News</a></li>
+										<li><a href="rubrique-3-qui-sommes-nous.html">Qui sommes-nous?</a></li>
+										<li><a href="rubrique-7-l-historique-du-sam-subaquatique.html">L'historique du Sam subaquatique</a></li>
+									</ul>
+								</li>
+								<li><a href="rubrique-1-tarifs-et-inscriptions.html">Tarifs et inscriptions</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Club<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="rubrique-2-l-encadrement.html">L'encadrement</a></li>
+										<li class="dropdown-submenu">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Infos pratiques</a>
+											<ul class="dropdown-menu">
+												<li><a href="#">Action</a></li>
+												<li><a href="#">Another action</a></li>
+												<li><a href="#">Something else here</a></li>
+												<li class="divider"></li>
+												<li><a href="#">Separated link</a></li>
+												<li class="divider"></li>
+												<li><a href="#">One more separated link</a></li>
+											</ul>
+										</li>
+										<li><a href="rubrique-8-infos-pratiques.html">Infos pratiques</a></li>
+										<li><a href="rubrique-4-agenda-de-la-sub.html">Agenda de la Sub</a></li>
+									</ul>
+								</li>
+							</ul>
 
-
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					  <ul class="nav navbar-nav">
-						<!--li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li-->
-						<!--li><a href="#">Accueil</a></li-->
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Accueil<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=news&amp;service=affiche">News</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=3">Qui sommes-nous?</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=7">L'historique du Sam subaquatique</a></li>
-						  </ul>
-						</li>
-						<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=1">Tarifs et inscriptions</a></li>
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Le Club<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=2">L'encadrement</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=8">Infos pratiques</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=4">Agenda de la Sub</a></li>
-						  </ul>
-						</li>
-						<!--li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="#">L'encadrement</a></li>
-							<li><a href="#">Infos pratiques</a></li>
-							<li><a href="#">Agenda de la Sub</a></li>
-						  </ul>
-						</li>
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=news&amp;service=getone">Saisie news</a></li>
-						  </ul>
-						</li-->
-					  </ul>
-
-					  <ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=mail&amp;service=contact&amp;rubriqueid=2">Nous contacter</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=affiche&amp;rubriqueid=9">Nous localiser</a></li>
-						  </ul>
-						</li>
-						<xsl:if test="/root/user/userId!=''">
-						<li class="dropdown">
-						  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
-						  <ul class="dropdown-menu">
-							<li><a href="index.php?domaine=news&amp;service=getpage">Saisie news</a></li>
-							<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
-							<li><a href="index.php?domaine=media&amp;service=getpage">Gestion média</a></li>
-						  </ul>
-						</li>
-						</xsl:if>
-					  </ul>
-					</div><!-- /.navbar-collapse -->
-				  </div><!-- /.container-fluid -->
+							<xsl:if test="/root/user/userId!=''">
+								<ul class="nav navbar-nav navbar-right">
+									<li class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>
+										<ul class="dropdown-menu">
+											<li><a href="index.php?domaine=news&amp;service=getpage">Saisie news</a></li>
+											<li><a href="index.php?domaine=rubrique&amp;service=getpage">Saisie rubrique</a></li>
+											<li><a href="index.php?domaine=media&amp;service=getpage">Gestion média</a></li>
+										</ul>
+									</li>
+								</ul>
+							</xsl:if>
+							<ul class="nav navbar-nav navbar-right">
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="contacts.html">Nous contacter</a></li>
+										<li><a href="rubrique-9-nous-localiser.html">Nous localiser</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
 				</nav>
 			</div>
 		</div>

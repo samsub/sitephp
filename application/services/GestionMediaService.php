@@ -13,7 +13,7 @@ class GestionMediaService extends ServiceStub {
 				if(preg_match("/image/", $_FILES['file']['type']))
 				{
 					$filename = $_FILES['file']['name'];
-					$destination = RACINE_SITE.REPERTOIRE_UPLOAD.'/' . $filename;
+					$destination = RACINE_SITE.'/'.REPERTOIRE_UPLOAD.'/' . $filename;
 					$location = $_FILES["file"]["tmp_name"];
 					
 					$this->logger->debug('location: '. $location);
@@ -55,7 +55,7 @@ class GestionMediaService extends ServiceStub {
 			{
 				
 				$filename = $_FILES['fichier']['name'];
-				$destination = RACINE_SITE.REPERTOIRE_UPLOAD.'/' . $filename;
+				$destination = RACINE_SITE.'/'.REPERTOIRE_UPLOAD.'/' . $filename;
 				$location = $_FILES['fichier']["tmp_name"];
 				$this->logger->debug('location: '. $location);
 				$this->logger->debug('destination: '. $destination);
@@ -101,8 +101,8 @@ class GestionMediaService extends ServiceStub {
 	}
 
 	public function delete(ContextExecution $p_contexte) {
-		$fichier = $p_contexte->m_dataRequest->getData('fichier');
-		unlink(REPERTOIRE_UPLOAD.'/'.$fichier);
+		$fichier = html_entity_decode($p_contexte->m_dataRequest->getData('fichier'));
+		unlink('./'.REPERTOIRE_UPLOAD.'/'.$fichier);
 		$p_contexte->ajoutReponseAjaxOK();
 	}
 }
