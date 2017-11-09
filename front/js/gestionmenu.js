@@ -1,6 +1,9 @@
 $(document).ready(function() {
-	    $( "#listeMenuPrimaire" ).sortable({
-      revert: true
+	$( "#listeMenuPrimaire" ).sortable({
+		revert: true,
+		stop: function(event, ui) {
+			alert("New position: " + ui.item.index());
+		}
     });
 	//alimenterMenu();
 });
