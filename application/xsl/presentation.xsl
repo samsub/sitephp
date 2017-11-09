@@ -147,16 +147,11 @@
 										<li class="dropdown-submenu">
 											<a href="#" class="dropdown-toggle" data-toggle="dropdown">Infos pratiques</a>
 											<ul class="dropdown-menu">
-												<li><a href="#">Action</a></li>
-												<li><a href="#">Another action</a></li>
-												<li><a href="#">Something else here</a></li>
-												<li class="divider"></li>
-												<li><a href="#">Separated link</a></li>
-												<li class="divider"></li>
-												<li><a href="#">One more separated link</a></li>
+												<li><a href="rubrique-11-dp-piscine.html">DP piscine</a></li>
+												<li><a href="rubrique-12-horaires-et-lignes-d-eau.html">Horaires et lignes d'eau</a></li>
+												<li><a href="rubrique-13-les-sites-de-plongee-du-sam-subaquatique.html">Les Sites de Plongées du SAM Subaquatique</a></li>
 											</ul>
 										</li>
-										<li><a href="rubrique-8-infos-pratiques.html">Infos pratiques</a></li>
 										<li><a href="rubrique-4-agenda-de-la-sub.html">Agenda de la Sub</a></li>
 									</ul>
 								</li>

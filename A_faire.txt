@@ -14,3 +14,13 @@ gestion des news					->ok
 alter datefinpublication à null ->supprimée
 
 gestion media						->ok
+
+
+
+Alter à 60 caractères du titre
+INSERT INTO `rubrique` (`rubriqueid`, `titre`, `contenu`) VALUES
+(
+(10, 'news', ''),
+(11, 'DP piscine', ''),
+(12, 'Horaires et lignes d\'eau',  ''),
+(13, 'Les Sites de Plongées du SAM Subaquatique',  '');
