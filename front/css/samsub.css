@@ -142,6 +142,11 @@ li {
 	background-repeat: no-repeat;
 }
 
+.pied_de_page {
+	background: linear-gradient( @couleur_fond 50%, #646464 80%);
+/*background-image: url("../images/banniere.png");*/
+}
+
 /**************************************************************************/
 /* balises news
 /**************************************************************************/

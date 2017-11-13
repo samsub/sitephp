@@ -13,6 +13,11 @@ class Login extends ServiceStub{
         $p_contexte->setUser($l_user);
 	}
 	
+	public function deconnexion(ContextExecution $p_contexte) {
+		$_SESSION = array();
+		session_destroy();
+	}
+	
 }
 
 
