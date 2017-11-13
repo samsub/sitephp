@@ -19,7 +19,7 @@
 				
 				</form>
 			</div>
-			<div class="col-sm-9">
+			<div class="col-sm-4">
 				<table class="table table-striped table-bordered" name="tableauResultat" id="tableauResultat">
 					<thead>
 						<tr>
@@ -31,6 +31,9 @@
 					</thead>
 					<tbody id="tbodyResultat"/>
 				</table>		
+			</div>
+			<div class="col-sm-5" id="cadre_image">
+				
 			</div>
 		</div>
         <br/>

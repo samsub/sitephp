@@ -3,8 +3,6 @@ $(document).ready(function() {
 });
 
 function envoyermail(form) {
-	//validationFormulaire(form);
-	
 	$.ajax({
 		type: "POST",
 		url: "index.php?domaine=mail&service=envoi",
@@ -27,16 +25,3 @@ function envoyermail(form) {
 	});
 	return false;
 }
-
-
-/*function enregistreNews() {
-	/*var params = "newsid=1&contenu="+$('#summernote').summernote('code');
-	$.ajax({
-		url:"index.php?domaine=news&service=update",
-		data:params,
-		method:'POST',
-		function(json){
-
-		}
-	});
-}*/

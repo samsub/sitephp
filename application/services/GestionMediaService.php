@@ -94,6 +94,8 @@ class GestionMediaService extends ServiceStub {
 			{
 				$fichier = array();
 				$fichier['nom']=$file;
+				$fichier['chemin']=$repertoire.'/'.$file;
+				$fichier['type']=mime_content_type($repertoire.'/'.$file);
 				$retour[]=$fichier;
 			}
 		}
