@@ -1,14 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	<!--xsl:output method="html" version="5.0" encoding="UTF-8" indent="yes" /-->
 	<xsl:output indent="yes" method="html" omit-xml-declaration="yes" />
 	<!--regle principal-->
 	<xsl:template match="/">
 		<xsl:variable name="affichageLateral">
 			<xsl:call-template name="affichageLateral"/>
 		</xsl:variable>
-		<!--xsl:value-of select="'&lt;!DOCTYPE html&gt;'"  disable-output-escaping="yes"/-->
 		<xsl:text disable-output-escaping="yes">&lt;!DOCTYPE html&gt;</xsl:text>
 		<html lang="fr">
 			<!-- entête HTML -->
@@ -23,17 +21,14 @@
 					<!-- bannière -->
 					<div class="row" id="banniere_centre">
 						<div class="col-xs-12"><br/></div>
-						<!--div class="col-xs-2"><span class="align-middle"><img src="front/images/LogoSUB.png" width="180px"/></span-->
 						<div class="col-xs-2"><img src="front/images/logo_t.png" width="180px" alt="logo sub"/></div>
 						<div class="col-xs-8"><br/></div>
 						<div class="col-xs-2"><img src="front/images/logo_sam_t.png"  width="180px" alt="logo sam"/></div>
 						<div class="col-xs-12"><br/></div>
 						<div class="col-xs-12"><br/></div>
 						<div class="col-xs-12"><br/></div>
+						<!-- menu -->
 						<xsl:call-template name="BarreMenu"/>
-						<!--div class="col-xs-12"><br/></div>
-						<div class="col-xs-12"><br/></div-->
-					<!-- menu -->
 						<div class="row"><br/></div>
 					</div>
 					
@@ -46,9 +41,8 @@
 								<aside>
 									<br/>
 									<div class="col-sm-3">
-										<div class="cadre_bord_rond colonne_droite">
-											<xsl:call-template name="LiensUtiles"/>
-										</div>
+										<xsl:call-template name="PaveUtilisateur"/>
+										<xsl:call-template name="LiensUtiles"/>
 									</div>
 								</aside>
 							</div>
@@ -58,9 +52,8 @@
 						</xsl:otherwise>
 					</xsl:choose>
 
-					<div class="row">
-						<!--div class="col-xs-4"></div-->
-						<div class="col-xs-12 cadre_bord_rond">
+					<div class="row pied_de_page">
+						<div class="col-xs-12">
 							<br/>
 							<p style="text-align:center;">Copyright © 2017 Sam Subaquatique Mérignac - Tous droits réservés</p>
 							<br/>
@@ -71,18 +64,7 @@
 			</body>
 		</html>
 	</xsl:template>
-	<!-- template entete -->
-	<xsl:template name="entete">
-		<!-- banniere -->
-		<xsl:call-template name="banniere"/>
-		<!-- menu -->
-		<xsl:variable name="affMenu">
-			<xsl:call-template name="controleMenu"/>
-		</xsl:variable>
-		<xsl:if test="$affMenu='O'">
-			<xsl:call-template name="menu"/>
-		</xsl:if>
-	</xsl:template>
+
 	<!--header de la domaine-->
 	<xsl:template name="Header">
 		<xsl:param name="HeadTitre"/>
@@ -109,6 +91,7 @@
 			<script type="text/javascript" src="front/js/communFormulaire.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/js/dateFormat.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/js/communJson.js" charset="iso-8859-1">&#160;</script>
+			<script type="text/javascript" src="front/js/session.js" charset="iso-8859-1">&#160;</script>
 
 			<script type="text/javascript" src="front/js/core_ajax.js" charset="iso-8859-1">&#160;</script>
 
@@ -185,20 +168,32 @@
 		</div>
 	</xsl:template>
 	<xsl:template name="LiensUtiles">
-		<h2 style="text-align:center;">Liens Utiles</h2>
-		<a href="http://www.ffessm.fr" class="list-group-item list-lien" target="blank">FFESSM (siteofficiel)</a>
-		<a href="http://www.plongee-cias.org" class="list-group-item list-lien" target="blank">CIALPC</a>
-		<a href="http://www.plongee-gironde.org" class="list-group-item list-lien" target="blank">CODEP 33</a>
-		<a href="https://tiv.ffessm.fr" class="list-group-item list-lien" target="blank">Application TIV</a>
-		<a href="https://ffessm.fr/pages_manuel.asp" class="list-group-item list-lien" target="blank">La page du MFT</a>
-		<a href="http://www.plongee-hendaye.net" class="list-group-item list-lien" target="blank">Base fédérale d'Hendaye</a>
-		<a href="http://www.oceanobs.fr" class="list-group-item list-lien" target="blank">Océan OBS</a>
-		<a href="http://maree.info/135" class="list-group-item list-lien" target="blank">Marée info Cap Ferret</a>
-		<a href="http://www.cabinet-lafont.com" class="list-group-item list-lien" target="blank">Lafont assurances</a>
-		<a href="https://www.longitude181.org/la-charte" class="list-group-item list-lien" target="blank">La charte du plongeur responsable</a>
-		<br/>
+		<div class="cadre_bord_rond colonne_droite">
+			<h2 style="text-align:center;">Liens Utiles</h2>
+			<a href="http://www.ffessm.fr" class="list-group-item list-lien" target="blank">FFESSM (siteofficiel)</a>
+			<a href="http://www.plongee-cias.org" class="list-group-item list-lien" target="blank">CIALPC</a>
+			<a href="http://www.plongee-gironde.org" class="list-group-item list-lien" target="blank">CODEP 33</a>
+			<a href="https://tiv.ffessm.fr" class="list-group-item list-lien" target="blank">Application TIV</a>
+			<a href="https://ffessm.fr/pages_manuel.asp" class="list-group-item list-lien" target="blank">La page du MFT</a>
+			<a href="http://www.plongee-hendaye.net" class="list-group-item list-lien" target="blank">Base fédérale d'Hendaye</a>
+			<a href="http://www.oceanobs.fr" class="list-group-item list-lien" target="blank">Océan OBS</a>
+			<a href="http://maree.info/135" class="list-group-item list-lien" target="blank">Marée info Cap Ferret</a>
+			<a href="http://www.cabinet-lafont.com" class="list-group-item list-lien" target="blank">Lafont assurances</a>
+			<a href="https://www.longitude181.org/la-charte" class="list-group-item list-lien" target="blank">La charte du plongeur responsable</a>
+			<br/>
+		</div>
 	</xsl:template>
-
+	<!-- pavé utilisateur-->
+	<xsl:template name="PaveUtilisateur">
+		<xsl:if test="/root/user/userId!=''">
+			<div class="cadre_bord_rond colonne_droite">
+				<h2 style="text-align:center;">Bienvenue</h2>
+				<a href="javascript:deconnexion();" class="list-group-item list-lien">Déconnexion</a>
+			</div>
+			<br/>
+		</xsl:if>
+	</xsl:template>
+	
 	<xsl:template name="affichageLateral">O</xsl:template>
 	<xsl:template name="onLoadTemplate"/>
 </xsl:stylesheet>
