@@ -10,5 +10,7 @@ class Membre extends SavableObject {
 	
 	public $prenom;
 	
+	public $profil;
+	
 }
 ?>

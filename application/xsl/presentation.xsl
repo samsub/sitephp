@@ -153,11 +153,15 @@
 											</ul>
 										</li>
 										<li><a href="rubrique-4-agenda-de-la-sub.html">Agenda de la Sub</a></li>
+										<xsl:if test="/root/user/userId!='' and (/root/membre/profil=1 or /root/membre/profil=2)">
+											<li role="separator" class="divider"></li>
+											<li><a href="rubrique-14-documents-encadracts.html">Documents encadrants</a></li>
+										</xsl:if>
 									</ul>
 								</li>
 							</ul>
 
-							<xsl:if test="/root/user/userId!=''">
+							<xsl:if test="/root/user/userId!='' and /root/membre/profil=1">
 								<ul class="nav navbar-nav navbar-right">
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin<span class="caret"></span></a>

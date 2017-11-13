@@ -252,6 +252,11 @@ class PageDescription {
         if ($p_contexte->getUser() != null) {
             $this->addBlock($user, $p_contexte->getUser()->fetchPublicMembers());
         }
+		
+		$membre = $doc->addChild('membre');
+        if ($p_contexte->getMembre() != null) {
+            $this->addBlock($membre, $p_contexte->getMembre()->fetchPublicMembers());
+        }
 
         //flux paramétrage
         $this->addFluxParametrage($doc);

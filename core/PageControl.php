@@ -47,12 +47,23 @@ class PageControl {
 				header('Location: index.php');
 				die();
 			}
+			//if(isset($_SESSION['userid'])){
+				$membre = new Membre();
+				$membre->userid = $_SESSION['userid'];
+				$membre->load();
+				$contexte->setMembre($membre);
+			//}
 		} else {
 			if(isset($_SESSION['userid'])){
 				$user = new Users();
 				$user->userId = $_SESSION['userid'];
 				$user->load();
 				$contexte->setUser($user);
+				$membre = new Membre();
+				$membre->userid = $_SESSION['userid'];
+				$membre->load();
+				$contexte->setMembre($membre);
+				
 			}
 		}
 		
