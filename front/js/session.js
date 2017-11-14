@@ -1,4 +1,8 @@
 
+/******************************************************/
+// connexion
+// permet d'ouvrir une session via un appel ajax
+/******************************************************/
 function connexion() {
 	var form = $('form').get(0);
 	var params = 'nom='+$('#nom').val()+'&motDePasse='+$('#motDePasse').val();
@@ -19,6 +23,10 @@ function connexion() {
 	return false;
 }
 
+/******************************************************/
+// deconnexion
+// permet de fermer une session via un appel ajax
+/******************************************************/
 function deconnexion() {
 	$.ajax({
 		url: "index.php?domaine=technique&service=deconnexion",

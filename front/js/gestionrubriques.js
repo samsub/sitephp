@@ -2,6 +2,10 @@ $(document).ready(function() {
 	alimenterRubriques();
 });
 
+/******************************************************/
+// alimenterRubriques
+// alimente le tableau des rubriques
+/******************************************************/
 function alimenterRubriques() {
 
 	$.ajax({
@@ -22,13 +26,17 @@ function alimenterRubriques() {
 				var row = $('<tr typetr="rubrique"/>');
 				row.append($('<td/>').text(tabJson[i].titre));
 				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editerRubrique(\''+ tabJson[i].rubriqueid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
-
 				$("#tbodyResultat").append(row);
 			}
 		}
 	});
 }
 
+/******************************************************/
+// editerRubrique
+// permet d'afficher le formulaire pour créer une
+// rubrique
+/******************************************************/
 function editerRubrique(rubriqueid) {
 	var params="&rubriqueid="+rubriqueid;
 
@@ -42,8 +50,6 @@ function editerRubrique(rubriqueid) {
 			document.rubrique.service.value='update';
 			document.rubrique.rubriqueid.value=json[0].rubriqueid;
 			document.rubrique.titre.value=json[0].titre;
-			//document.rubrique.contenu.value=json[0].contenu;
-			//$('#summernote').html(json[0].contenu).text()
 			$('#summernote').summernote('destroy');
 			$('#summernote').html(json[0].contenu);
 			$('#summernote').summernote({
@@ -55,18 +61,14 @@ function editerRubrique(rubriqueid) {
 				}
 			});
 			$( "#divFormulaire").show();
-			/*$("div#boiteRubrique").dialog({
-				resizable: false,
-				height:hauteur,
-				width:largeur,
-				modal: true
-			});*/
 		}
 	);
 }
 
 /******************************************************/
 // soumettre
+// récupère les donées du formulaire et effectue un
+// appel ajax pour enregistrer les données
 /******************************************************/
 function soumettre(form) {
 	if(!validForm(form)) {
@@ -80,8 +82,7 @@ function soumettre(form) {
 		method:'POST',
 		dataType: 'json',
 		success: function(json){
-			//$("div#boiteRubrique").dialog('close');
-			$( "#divFormulaire").hide();
+			fermerFormulaire();
 			alimenterRubriques();
 			return false;
 		}
@@ -89,6 +90,10 @@ function soumettre(form) {
 	return false;
 }
 
+/******************************************************/
+// fermerFormulaire
+// permet de cacher le formulaire
+/******************************************************/
 function fermerFormulaire() {
 	$( "#divFormulaire").hide();
 }

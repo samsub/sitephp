@@ -1,7 +1,10 @@
 $(document).ready(function() {
 	alimenterMedia();
 });
-
+/******************************************************/
+// alimenterMedia
+// permet d'afficher la liste des médias
+/******************************************************/
 function alimenterMedia() {
 	$.ajax({
 		url: "index.php?domaine=media&service=getliste",
@@ -28,6 +31,11 @@ function alimenterMedia() {
 	});
 }
 
+/******************************************************/
+// upload
+// permet d'envoyer une image ajoutée par l'utilisateur
+// au wisiwig
+/******************************************************/
 function upload() {
 	
 	var form = $('form').get(0);
@@ -51,6 +59,11 @@ function upload() {
 	return false;
 }
 
+/******************************************************/
+// suppmedia
+// permet de supprimer un document contenu dans le
+// répertoire d'upload
+/******************************************************/
 function suppmedia(fichier) {
 	var params='fichier='+fichier
 	
@@ -68,6 +81,11 @@ function suppmedia(fichier) {
 	return false;
 }
 
+/******************************************************/
+// afficheimage
+// permet d'afficher une image à partir de son
+// chemin
+/******************************************************/
 function afficheimage(chemin, type) {
 	var div = $("#cadre_image");
 	div.html('');
@@ -75,6 +93,5 @@ function afficheimage(chemin, type) {
 		div.append($('<img width="300px" src="'+chemin+'"/>"'));
 	} else if(type.indexOf("pdf")!=-1) {
 		div.append($('<iframe width="350px" src="'+chemin+'"/>"'));
-		
 	}
 }

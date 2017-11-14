@@ -65,7 +65,7 @@
 		</html>
 	</xsl:template>
 
-	<!--header de la domaine-->
+	<!--header de la page-->
 	<xsl:template name="Header">
 		<xsl:param name="HeadTitre"/>
 		<head>
@@ -94,18 +94,13 @@
 			<script type="text/javascript" src="front/js/session.js" charset="iso-8859-1">&#160;</script>
 
 			<script type="text/javascript" src="front/js/core_ajax.js" charset="iso-8859-1">&#160;</script>
-
-			<!-- plugins -->
-			<link href="front/css/jquery.multiselect.css" rel="stylesheet" type="text/css"/>
-			<script type="text/javascript" src="front/js/jquery.multiselect.js" charset="iso-8859-1">&#160;</script>
-
-			<!--link href="front/css/bootstrap-force.css" rel="stylesheet" type="text/css"/-->
+			
 			<link href="front/css/samsub.css" rel="stylesheet/less" type="text/css"/>
 			<script type="text/javascript" src="front/lessjs/lessjs.js" charset="iso-8859-1">&#160;</script>
 			<xsl:call-template name="js.module.sheet"/>
 		</head>
 	</xsl:template>
-	<!-- banniere -->
+	<!-- barre de menu -->
 	<xsl:template name="BarreMenu">
 		<div class="row">
 			<div class="col-xs-2"><br/></div>
@@ -171,6 +166,7 @@
 			</div>
 		</div>
 	</xsl:template>
+	<!--liens utiles-->
 	<xsl:template name="LiensUtiles">
 		<div class="cadre_bord_rond colonne_droite">
 			<h2 style="text-align:center;">Liens Utiles</h2>

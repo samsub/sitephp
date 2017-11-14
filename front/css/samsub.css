@@ -10,7 +10,6 @@ body {
 	width:100%;
 	margin-right: auto;
 	margin-left: auto;
-	/*font-size: 12px;*/
 	background-image: url("../images/Bulles-dair.jpeg");
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -49,9 +48,6 @@ li {
 
 .container {
 	background-color: @couleur_fond;
-	/*border-radius: 5px;*/
-	/*margin-top: 15px;*/
-	/*margin-bottom: 15px;*/
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -73,11 +69,9 @@ li {
 
 .mini-submenu{
   display:none;
-  /*background-color: rgba(0, 0, 0, 0);*/
   border: 1px solid rgba(0, 0, 0, 0.9);
   border-radius: 4px;
   padding: 9px;
-  /*position: relative;*/
   width: 42px;
 
 }
@@ -136,7 +130,6 @@ li {
 }
 
 #banniere_centre {
-	/*background-image: url("../images/10109161-cabane-tchanquee-pqpak-fotoliacom.jpg");*/
 	background-image: url("../images/banniere.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -144,7 +137,6 @@ li {
 
 .pied_de_page {
 	background: linear-gradient( @couleur_fond 50%, #646464 80%);
-/*background-image: url("../images/banniere.png");*/
 }
 
 /**************************************************************************/
@@ -159,7 +151,6 @@ li {
 	line-height: 0.8em;
 	padding-bottom: .3em;
 	border-bottom-style: solid;
-	/*border-color: black;*/
 	border-bottom-color: black;
 	border-bottom-width: 3px;
 	border-bottom-color: rgb(36,64,97);

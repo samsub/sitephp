@@ -2,6 +2,10 @@ $(document).ready(function() {
 
 });
 
+/******************************************************/
+// envoyermail
+// permet d'envoyer un mail via un appel ajax
+/******************************************************/
 function envoyermail(form) {
 	$.ajax({
 		type: "POST",
@@ -14,14 +18,13 @@ function envoyermail(form) {
 			message: $("#message").val()
 		},
 		success : function(resultat, statut, erreur){
-				if(resultat[0].status=='OK'){
-					$("#bontonEnvoyer").attr('disabled', true);
-					$("#messageok").show();
-				} else {
-					alert("Erreur lors de l'envoi");
-				}
+			if(resultat[0].status=='OK'){
+				$("#bontonEnvoyer").attr('disabled', true);
+				$("#messageok").show();
+			} else {
+				alert("Erreur lors de l'envoi");
 			}
-		
+		}
 	});
 	return false;
 }

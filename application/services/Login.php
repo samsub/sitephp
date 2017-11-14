@@ -18,20 +18,14 @@ class Login extends ServiceStub{
 			$reponse->message='nom ou mot de passe incorrect';
 		}
 		
-		
-		
-		
-		
 		$p_contexte->addDataBlockRow($reponse);
-		
 	}
 	
 	public function deconnexion(ContextExecution $p_contexte) {
+		//destruction des variables de session
 		$_SESSION = array();
+		//destruction de la session
 		session_destroy();
 	}
-	
 }
-
-
 ?>

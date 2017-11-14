@@ -1,3 +1,8 @@
+/******************************************************/
+// sendFile
+// permet d'uploader un fichier et de mettre à jour le
+// wisiwig
+/******************************************************/
 function sendFile(file,editor,welEditable) {
     data = new FormData();
     data.append("file", file);
