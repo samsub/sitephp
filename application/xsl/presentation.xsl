@@ -97,6 +97,10 @@
 			
 			<link href="front/css/samsub.css" rel="stylesheet/less" type="text/css"/>
 			<script type="text/javascript" src="front/lessjs/lessjs.js" charset="iso-8859-1">&#160;</script>
+			
+			<link href="front/jdiaporama/jdiaporama.css" rel="stylesheet" type="text/css"/>
+			<script type="text/javascript" src="front/jdiaporama/jquery.jDiaporama.js" charset="iso-8859-1">&#160;</script>
+			
 			<xsl:call-template name="js.module.sheet"/>
 		</head>
 	</xsl:template>
@@ -137,6 +141,7 @@
 										</xsl:if>
 									</ul>
 								</li>
+								<li><a href="diaporama.html">Photos et vidéos</a></li>
 							</ul>
 
 							<xsl:if test="/root/user/userId!='' and /root/membre/profil=1">
