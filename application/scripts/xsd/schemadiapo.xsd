@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xsd:element name="diaporamas">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="diaporama" minOccurs="1" maxOccurs="100">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="image" minOccurs="2" maxOccurs="100">
+							<xsd:complexType>
+								<xsd:attribute name="src" type="xsd:string" use="required"/>
+								<xsd:attribute name="alt" type="xsd:string" use="required"/>
+								<xsd:attribute name="title" type="xsd:string" use="required"/>
+							</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					<xsd:attribute name="titre" type="xsd:string" use="required"/>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+</xsd:schema>

@@ -6,7 +6,8 @@ $(document).ready(function(){
 	$.ajax({
 		url: 'front/diaporama/diaporama.xml',
 		success: function(data) {
-			tableauDiapo=xmlToJson(data)
+			tableauDiapo=xmlToJson(data);
+			initListeDiaporama();
 			afficheDiaporama(0);
 		}
 	});
@@ -15,6 +16,14 @@ $(document).ready(function(){
 
 });
 
+
+function initListeDiaporama() {
+	for(i=0; i<tableauDiapo.diaporamas.diaporama.length; i++) {
+		var div=$('<div class="col-lg-2"/>');
+		div.append('<button class="btn btn-primary" onclick="afficheDiaporama('+i+')">'+tableauDiapo.diaporamas.diaporama[i]["@attributes"].titre+'</button>');
+		$("#sectionDiaporama").append(div);
+	}
+}
 
 function afficheDiaporama(idDIapo) {
 	$('.diaporama1').children().remove();
