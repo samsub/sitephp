@@ -47,6 +47,15 @@ class GestionNewsService extends ServiceStub {
 		$p_contexte->ajoutReponseAjaxOK();
     }
 	
+	public function delete(ContextExecution $p_contexte){
+        $newsid = $p_contexte->m_dataRequest->getData('newsid');
+        $news = new News();
+        $news->newsid = $newsid;
+        $news->load();
+		$news->delete();
+		$p_contexte->ajoutReponseAjaxOK();
+    }
+	
 	public function getListe(ContextExecution $p_contexte){
         $requete = "SELECT newsid, titre, datepublication, contenu FROM news";
 		$listeLibelles = new ListDynamicObject();

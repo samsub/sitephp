@@ -122,6 +122,20 @@ function soumettre(form) {
 	return false;
 }
 
+function supprimernews() {
+	if( confirm("Confirmer la suppression?")) {
+		$.getJSON(
+			"index.php?domaine=news&service=suppression",
+			data="newsid="+ $("#newsid").val(),
+			function(json){
+				fermerFormulaire();
+				alimenterNews();
+			}
+		);
+	}
+}
+
+
 function fermerFormulaire() {
 	$( "#divFormulaire").hide();
 }

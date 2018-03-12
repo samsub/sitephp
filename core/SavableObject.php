@@ -157,7 +157,7 @@ abstract class SavableObject extends Objects {
 						}
 					} else {
 						//type AUTRE
-						$this->logger->debug('Type non géréen update:' . $champDefinition['Type']);
+						$this->logger->debug('Type non géré en update:' . $champDefinition['Type']);
 						$set[] = sprintf("%s=%s", $col, $val=='' ? 0 : $val);
 					}
                 }
@@ -177,7 +177,7 @@ abstract class SavableObject extends Objects {
      * fonction de suppression en base d'un objet
      */
     public function delete() {
-        $requete = 'DELETE FROM '.strtolower($this->_tableName). 'WHERE ' . implode(' AND ', $this->getPrimaryKeyValorisee());
+        $requete = 'DELETE FROM '.strtolower($this->_tableName). ' WHERE ' . implode(' AND ', $this->getPrimaryKeyValorisee());
         $this->logger->debug('delete:' . $requete);
         try {
             $stmt = self::$_pdo->query($requete);

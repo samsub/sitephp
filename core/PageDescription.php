@@ -71,7 +71,7 @@ class PageDescription {
 			$methode = $this->m_methode.'';
 			$service->$methode($p_contexte);
         } catch (FunctionnalException $fe) {
-			$this->logger->debug('functional');
+			$this->logger->error('Erreur functionnelle');
             $p_contexte->addError($fe->getMessage());
         }
         //lance l'affichage si le rendu est xsl

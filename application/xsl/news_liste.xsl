@@ -62,6 +62,9 @@
 									<div class="col-xs-2" style="text-align:center;" onclick="fermerFormulaire()">
 										<button type="button" class="btn btn-primary">Annuler</button>
 									</div>
+									<div class="col-sm-offset-4 col-sm-2" style="text-align:center;">
+										<button type="button" class="btn btn-primary" onclick="return supprimernews()">Supprimer</button>
+									</div>
 								</div>
 							</div>
 						</div>

@@ -4,7 +4,7 @@ var tableauDiapo=[]; //[tab1, tab2];
 $(document).ready(function(){
 	
 	$.ajax({
-		url: 'front/diaporama/diaporama.xml',
+		url: 'diaporama/diaporama.xml',
 		success: function(data) {
 			tableauDiapo=xmlToJson(data);
 			initListeDiaporama();
@@ -36,12 +36,12 @@ function afficheDiaporama(idDIapo) {
 	var i=0;
 	for(i=0; i<tabImage.length; i++) {
 		var li = $('<li/>');
-		$(li).append('<img src="front/diaporama/' + tabImage[i]["@attributes"].src + '" alt="'+tabImage[i]["@attributes"].alt+'" title="'+tabImage[i]["@attributes"].title+'">'),
+		$(li).append('<img src="diaporama/images/' + tabImage[i]["@attributes"].src + '" alt="'+tabImage[i]["@attributes"].alt+'" title="'+tabImage[i]["@attributes"].title+'" style="width:700px">'),
 		$('.diaporama1').append(li);
 	}
 	$(".diaporama1").jDiaporama({
 		animationSpeed: "slow",
-		delay:3
+		delay:5
 	});
 	
 }

@@ -143,7 +143,6 @@
 								</li>
 								<li><a href="diaporama.html">Photos et vidéos</a></li>
 							</ul>
-
 							<xsl:if test="/root/user/userId!='' and /root/membre/profil=1">
 								<ul class="nav navbar-nav navbar-right">
 									<li class="dropdown">
@@ -169,6 +168,7 @@
 					</div>
 				</nav>
 			</div>
+			<div class="col-xs-2"><img src="front/images/logo-EcoSub.png"  width="150px" alt="logo ecosub"/></div>
 		</div>
 	</xsl:template>
 	<!--liens utiles-->
