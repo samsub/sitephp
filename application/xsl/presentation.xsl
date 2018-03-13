@@ -21,7 +21,7 @@
 					<!-- bannière -->
 					<div class="row" id="banniere_centre">
 						<div class="col-xs-12"><br/></div>
-						<div class="col-xs-2"><img src="front/images/logo_t.png" width="180px" alt="logo sub"/></div>
+						<div class="col-xs-2 text-center"><img src="front/images/logo_t.png" width="180px" alt="logo sub"/></div>
 						<div class="col-xs-8"><br/></div>
 						<div class="col-xs-2"><img src="front/images/logo_sam_t.png"  width="180px" alt="logo sam"/></div>
 						<div class="col-xs-12"><br/></div>
@@ -106,8 +106,8 @@
 	</xsl:template>
 	<!-- barre de menu -->
 	<xsl:template name="BarreMenu">
-		<div class="row">
-			<div class="col-xs-2"><br/></div>
+		
+			<div class="col-xs-2 text-center" style="margin-top:-20px"><img src="front/images/logo-EcoSub.png"  width="90px" alt="logo ecosub"/></div>
 			<div class="col-xs-8">
 				<nav class="navbar navbar-default">
 					<div class="container-fluid">
@@ -168,8 +168,7 @@
 					</div>
 				</nav>
 			</div>
-			<div class="col-xs-2"><img src="front/images/logo-EcoSub.png"  width="150px" alt="logo ecosub"/></div>
-		</div>
+		
 	</xsl:template>
 	<!--liens utiles-->
 	<xsl:template name="LiensUtiles">
