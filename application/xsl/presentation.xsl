@@ -141,7 +141,13 @@
 										</xsl:if>
 									</ul>
 								</li>
-								<li><a href="diaporama.html">Photos et vidéos</a></li>
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Galerie<span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li><a href="diaporama.html">Diaporamas</a></li>
+										<li><a href="rubrique-15-videos.html">Vidéos</a></li>
+									</ul>
+								</li>
 							</ul>
 							<xsl:if test="/root/user/userId!='' and /root/membre/profil=1">
 								<ul class="nav navbar-nav navbar-right">
