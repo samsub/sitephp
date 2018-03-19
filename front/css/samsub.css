@@ -1,19 +1,19 @@
 
 @couleur_fond:#EEEEEE;
-@taille_police:10pt;
+@taille_police:12pt;
 
 /**************************************************************************/
 /* balise html
 /**************************************************************************/
 
 body {
-	width:100%;
+	/*width:100%;
 	margin-right: auto;
 	margin-left: auto;
 	background-image: url("../images/Bulles-dair.jpeg");
 	background-repeat: no-repeat;
 	background-size: 100%;
-	background-attachment: fixed;
+	background-attachment: fixed;*/
 	font-family: verdana, geneva, sans-serif;
 	font-size: @taille_police;
 }
@@ -46,13 +46,13 @@ li {
 /**************************************************************************/
 
 
-.container {
+/*.container {
 	background-color: @couleur_fond;
 }
 
 .navbar-default .navbar-nav > li > a {
 	color:#000000;
-}
+}*/
 
 
 /**************************************************************************/
@@ -60,7 +60,7 @@ li {
 /**************************************************************************/
 
 
-.cadre_bord_rond {
+/*.cadre_bord_rond {
 	border-radius: 5px;
 	background-color:@couleur_fond;
 	padding-right: 5px;
@@ -108,14 +108,14 @@ li {
 	box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 5px rgba(0,0,0,.075);
 	background-color: #FFFFFF;
 }
-
+*/
 .list-lien {
   color: #000000;
 }
-
+/*
 .list-group-item {
 	/*background-color: #EEEEEE;*/
-	color:#000000;
+/*	color:#000000;
 }
 
 
@@ -137,7 +137,7 @@ li {
 
 .pied_de_page {
 	background: linear-gradient( @couleur_fond 50%, #646464 80%);
-}
+}*/
 
 /**************************************************************************/
 /* balises news

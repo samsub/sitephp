@@ -33,5 +33,9 @@ class DataRequest {
     public function getDataTab() {
         return $this->m_data;
     }
+	
+	public function setData($param, $valeur){
+		$this->m_data[$param] = $valeur;
+	}
 }
 ?>

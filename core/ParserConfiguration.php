@@ -27,7 +27,11 @@ class ParserConfiguration {
 		
 		if (isset($result[0]['paramFlow'])) {
 			$page->paramFlow((string) $result[0]['paramFlow']);
+		}
+		if (isset($result[0]['paramAppel'])) {
+			$page->setParamAppel((string) $result[0]['paramAppel']);
 		}	
+		
         return $page;
     }
 }

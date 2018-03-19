@@ -14,6 +14,8 @@ class PageDescription {
     private $m_paramFlow = null;
     private $m_render = null;
 
+	private $m_paramAppel = null;
+	
     public function paramFlow($flow) {
         $this->m_paramFlow = $flow;
     }
@@ -51,9 +53,15 @@ class PageDescription {
         return $this->m_render;
     }
 	
+	public function setParamAppel($paramAppel){
+        $this->m_paramAppel = $paramAppel;
+    }
+	
 	public function setClasse($classe){
         $this->m_classe=$classe;
     }
+	
+	
 
     /**
      * 
@@ -66,6 +74,10 @@ class PageDescription {
         $this->logger->debug('Classe:' . $this->m_nomClasse);
         $this->logger->debug('Methode:' . $this->m_methode);
 
+		if($this->m_paramAppel != null) {
+			$this->alimenteContexte($p_contexte);
+		}
+		
         try {
             $service = new $this->m_nomClasse;
 			$methode = $this->m_methode.'';
@@ -82,6 +94,21 @@ class PageDescription {
             echo json_encode($p_contexte->m_dataResponse);
         }
     }
+	
+	private function alimenteContexte($p_contexte) {
+		$this->logger->debug('vel def:'.$this->m_paramAppel);
+		$tabParams = explode(';', $this->m_paramAppel);
+		foreach($tabParams as $key=>$param) {
+			$this->logger->debug('coucou1:'.$param);
+			$tabParam = explode('=', $param);
+			foreach($tabParam as $nom=>$valeur) {
+				//$this->logger->debug('coucou2:'.$nom);
+				//$this->logger->debug('coucou2v:'.$valeur);
+				$p_contexte->m_dataRequest->setData($tabParam[0], $tabParam[1]);
+			}
+		}
+	}
+	
 
     public function setXslFile($p_xslFile) {
         $this->m_xsl = $p_xslFile;
@@ -93,7 +120,7 @@ class PageDescription {
             if ($key == 'associatedObjet') {
                 if (count($value) != 0) {
                     $asso = $p_noeud->addChild('associatedObjet');
-                    foreach($value as $key2 => $data) {
+					foreach($value as $key2 => $data) {
                         $this->parseListObject($asso, $data);
                     }
                 }

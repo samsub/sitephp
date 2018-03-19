@@ -34,7 +34,8 @@
 			<service name="update" classe="GestionRubriquesService" methode="update" isPrivee="true" render="json"/>
 		</domaine>
 		<domaine name="defaut">
-			<service name="defaut" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl"/>
+			<!--service name="defaut" classe="GestionNewsService" methode="affiche" isPrivee="false"  xsl="xsl/news_affiche.xsl" paramAppel="rubriqueid=10"/-->
+			<service name="defaut" classe="GestionRubriquesService" methode="getOne" isPrivee="false"  xsl="xsl/rubrique_affichage.xsl" paramAppel="rubriqueid=3"/>
 		</domaine>
 	</domaines>
 </configuration>
