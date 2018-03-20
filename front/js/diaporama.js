@@ -35,8 +35,8 @@ function afficheDiaporama(idDIapo) {
 	var tabImage=tableauDiapo.diaporamas.diaporama[idDIapo].image;
 	var i=0;
 	for(i=0; i<tabImage.length; i++) {
-		var li = $('<li style="text-align:center;"/>');
-		$(li).append('<img src="diaporama/images/' + tabImage[i]["@attributes"].src + '" alt="'+tabImage[i]["@attributes"].alt+'" title="'+tabImage[i]["@attributes"].title+'">'),
+		var li = $('<li style="width:100%"/>');
+		$(li).append('<img src="diaporama/images/' + tabImage[i]["@attributes"].src + '" alt="'+tabImage[i]["@attributes"].alt+'" title="'+tabImage[i]["@attributes"].title+'" style="margin:0px auto;">'),
 		$('.diaporama1').append(li);
 	}
 	$(".diaporama1").jDiaporama({
