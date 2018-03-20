@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <diaporamas>
-	<diaporama titre="titre diapo 1">
-		<image src="image1.jpg" alt="On the road again" title="Sur la route de l'ouest, Arizona Guillaume Voisin" />
-		<image src="image2.jpg" alt="Venice Beach, California" />
-		<image src="image3.jpg" alt="" title="Les garde-côte sur les plages de Malibu  Guillaume Voisin" />
+	<diaporama titre="11ème Nuit de l'Eau - 17-03-2018">
+		<image src="2018-03-01-001.jpg" alt="C'et parti pour la 11ème Nuit de l'Eau" title="C'et parti pour la 11ème Nuit de l'Eau" />
+		<image src="2018-03-01-002.jpg" alt="" title="" />
+		<image src="2018-03-01-003.jpg" alt="" title="" />
+		<image src="2018-03-01-005.jpg" alt="" title="" />
+		<image src="2018-03-01-006.jpg" alt="" title="" />
+		<image src="2018-03-01-007.jpg" alt="" title="" />
+		<image src="2018-03-01-008.jpg" alt="" title="" />
+		<image src="2018-03-01-009.jpg" alt="" title="" />
+		<image src="2018-03-01-010.jpg" alt="" title="" />
+		<image src="2018-03-01-011.jpg" alt="" title="" />
+		<image src="2018-03-01-012.jpg" alt="" title="" />
+		<image src="2018-03-01-013.jpg" alt="" title="" />
+		<image src="2018-03-01-014.jpg" alt="" title="" />
+		<image src="2018-03-01-015.jpg" alt="" title="" />
+		<image src="2018-03-01-016.jpg" alt="" title="" />
+		<image src="2018-03-01-017.jpg" alt="23h00 - Les derniers baptêmes" title="23h00 - Les derniers baptêmes" />
 	</diaporama>
 	<diaporama titre="titre diapo 2">
 		<image src="image4.jpg" alt="Universal Studios" title="Le parc d'attractions Universal Studios Guillaume VoisinGrande grande description " />

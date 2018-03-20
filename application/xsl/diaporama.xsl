@@ -7,25 +7,10 @@
         <br/>
         <br/>
 		<center>
-		<section class="row" id="sectionDiaporama">
-			<!--div class="col-lg-2">
-				<button class="btn btn-primary" onclick="afficheDiaporama(0)">D1</button>
-			</div>
-			<div class="col-lg-2">
-				<button class="btn btn-primary" onclick="afficheDiaporama(1)">D2</button>
-			</div-->
-			
-		</section>
-		
+		<section class="row" id="sectionDiaporama"/>
 		<br/>
 		<div class="diapo">
-			<ul class="diaporama1">
-				<!--li><img src="front/diaporama/image1.jpg" alt="On the road again" title="Sur la route de l'ouest, Arizona Guillaume Voisin" /></li>
-				<li><img src="front/diaporama/image2.jpg" alt="Venice Beach, California" /></li>
-				<li><img src="front/diaporama/image3.jpg" alt="" title="Les garde-côte sur les plages de Malibu  Guillaume Voisin" /></li>
-				<li><img src="front/diaporama/image4.jpg" alt="Universal Studios" title="Le parc d'attractions Universal Studios Guillaume VoisinGrande grande description blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla blabla" /></li>
-				<li><img src="front/diaporama/image5.jpg" alt="Hollywood Sign" title="Le fameux panneau Hollywood sur la colline Guillaume Voisin" /></li-->
-			</ul>
+			<ul class="diaporama1"/>
 		</div>
 		</center>
         <br/>
@@ -39,5 +24,5 @@
     </xsl:template>
 	
 	
-	
+	<xsl:template name="affichageLateral">N</xsl:template>
 </xsl:stylesheet>

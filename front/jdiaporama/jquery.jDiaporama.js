@@ -33,7 +33,7 @@
 				var current_slide = 0;
 				var nb_slides = $("li", diapo).length;
 				
-				diapo.wrap("<div class='jDiaporama'></div>");
+				diapo.wrap("<div class='jDiaporama' style='background-color: black;'></div>");
 				
 				// Detection et actions des mouseover
 				diapo.parent().mouseenter(function(){
@@ -59,9 +59,9 @@
 					width = $("li:first-child img", diapo).width();
 					height = $("li:first-child img", diapo).height();
 					
-					diapo.width(width);
+					diapo.width(700);
 					diapo.height(height);
-					diapo.parent().width(width);
+					diapo.parent().width(700);
 					diapo.parent().height(height);
 					
 					if(options.controls)
