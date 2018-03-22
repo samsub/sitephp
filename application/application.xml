@@ -23,7 +23,7 @@
 			<service name="create" classe="GestionNewsService" methode="create" isPrivee="true" render="json"/>
 			<service name="getliste" classe="GestionNewsService" methode="getListe" isPrivee="true" render="json"/>
 			<service name="getpage" classe="GestionNewsService" methode="fictive" isPrivee="true" xsl="xsl/news_liste.xsl"/>
-			<service name="getone" classe="GestionNewsService" methode="getOne" isPrivee="true"  render="json"/>
+			<service name="getone" classe="GestionNewsService" methode="getOne" isPrivee="false"  render="json"/>
 			<service name="update" classe="GestionNewsService" methode="update" isPrivee="true" render="json"/>
 		</domaine>
 		<domaine name="rubrique">

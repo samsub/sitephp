@@ -14,6 +14,8 @@ class News extends SavableObject {
 	
 	public $etatpublication;
 	
+	public $introduction;
+	
 	public $contenu;
 	
 }

@@ -134,10 +134,15 @@ li {
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+*/
 
-.pied_de_page {
-	background: linear-gradient( @couleur_fond 50%, #646464 80%);
-}*/
+.bg_samsub {
+	background-color: #edeeef;
+}
+
+.p_introduction {
+	font-weight: bold;
+}
 
 /**************************************************************************/
 /* balises news

@@ -4,8 +4,8 @@
     <xsl:import href="commun.xsl"/>
 
     <xsl:template name="js.module.sheet">
-		<link href="front/summernote/summernote.css" rel="stylesheet"/>
-        <script language="JavaScript" src="front/summernote/summernote.js" type="text/javascript"/>
+		<link href="front/summernote/summernote-0.8.9-dist/dist/summernote-bs4.css" rel="stylesheet"/>
+        <script language="JavaScript" src="front/summernote/summernote-0.8.9-dist/dist/summernote-bs4.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/datepicker.js" type="text/javascript"/>
 		<script language="JavaScript" src="front/js/sendfile.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/gestionnews.js" type="text/javascript"/>
@@ -51,15 +51,21 @@
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
+								<label class="col-form-label" for="introduction">Introduction</label>
+								<textarea id="introduction" class="form-control" rows="3"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12">
 								<label class="col-form-label" for="contenu">Contenu</label>
 								<div id="summernote" required="required"/>
 							</div>
-							<div class="row">
-								<div class="form-group row">
-									<div class="col-sm-offset-4 col-sm-2" style="text-align:center;">
+							<div class="row justify-content-md-center">
+								<div class="col-md-auto">
+									<div class="col-sm-2" style="text-align:center;">
 										<button type="submit" class="btn btn-primary">Valider</button>
 									</div>
-									<div class="col-xs-2" style="text-align:center;" onclick="fermerFormulaire()">
+									<div class="col-sm-2" style="text-align:center;" onclick="fermerFormulaire()">
 										<button type="button" class="btn btn-primary">Annuler</button>
 									</div>
 								</div>

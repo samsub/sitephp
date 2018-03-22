@@ -1,0 +1,16 @@
+mise en page des news				-> ok
+transfert news						-> ok
+Qui sommes-nous?					-> ok
+formulaire de contact				-> ok
+
+
+page admin connexion				->ok
+
+
+gestion des rubriques				->ok
+gestion des news					->ok
+
+Alter rubriques
+
+ALTER TABLE `news` ADD `introduction` BLOB NOT NULL AFTER `etatpublication`;
+ALTER TABLE `news` CHANGE `introduction` `introduction` BLOB NULL DEFAULT NULL;

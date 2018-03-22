@@ -25,7 +25,7 @@ function alimenterRubriques() {
 			for(i=0; i<nb; i++) {
 				var row = $('<tr typetr="rubrique"/>');
 				row.append($('<td/>').text(tabJson[i].titre));
-				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editerRubrique(\''+ tabJson[i].rubriqueid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
+				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editerRubrique(\''+ tabJson[i].rubriqueid +'\')"><span class="oi oi-pencil"/></a>'));
 				$("#tbodyResultat").append(row);
 			}
 		}

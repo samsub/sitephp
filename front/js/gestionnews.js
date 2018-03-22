@@ -27,7 +27,7 @@ function alimenterNews() {
 				var row = $('<tr typetr="news"/>');
 				row.append($('<td/>').text(tabJson[i].titre));
 				
-				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editernews(\''+ tabJson[i].newsid +'\')"><span class="glyphicon glyphicon-pencil"/></a>'));
+				row.append($('<td class="text-center"/>').append('<a href="#" onclick="editernews(\''+ tabJson[i].newsid +'\')"><span class="oi oi-pencil"/></a>'));
 
 				$("#tbodyResultat").append(row);
 			}
@@ -47,6 +47,7 @@ function editernews(newsid) {
 		document.news.service.value='create';
 		document.news.newsid.value='';
 		document.news.titre.value='';
+		document.news.introducton.value='';
 		$("input[name=etatpublication]").attr('checked', '');
 		document.news.datepublication.value='';
 		$('#summernote').summernote('destroy');
@@ -69,6 +70,7 @@ function editernews(newsid) {
 				document.news.service.value='update';
 				document.news.newsid.value=json[0].newsid;
 				document.news.titre.value=json[0].titre;
+				document.news.introduction.value=json[0].introduction;
 				document.news.datepublication.value=json[0].datepublication;
 				if (json[0].etatpublication==1) {
 					$("input[name=etatpublication]").attr('checked', 'checked');
@@ -105,6 +107,7 @@ function soumettre(form) {
 		data: {
 			newsid: $("#newsid").val(),
 			titre: $("#titre").val(),
+			introduction: $("#introduction").val(),
 			datepublication: $("#datepublication").val(),
 			etatpublication: $("#etatpublication").is(':checked'),
 			contenu: $('#summernote').summernote('code')

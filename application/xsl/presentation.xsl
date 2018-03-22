@@ -43,7 +43,7 @@
 					</xsl:choose>
 				</div>
 
-				<div class="container pied_de_page">
+				<div class="container-fluid bg_samsub">
 					<div class="col-xs-12">
 						<br/>
 						<p style="text-align:center;">Copyright © 2017 Sam Subaquatique Mérignac - Tous droits réservés</p>
@@ -70,12 +70,14 @@
 
 			<link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap.min.css" rel="stylesheet"/>
 			<!--link href="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/css/bootstrap-theme.min.css" rel="stylesheet"/-->
-
+			<link href="front/font/css/open-iconic-bootstrap.css" rel="stylesheet" type="text/css"/>
+			
 			<link href="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/jquery-ui.min.css" rel="stylesheet" type="text/css"/>
 
 			<script type="text/javascript" src="front/jquery/jquery-3.3.1/jquery.js" charset="iso-8859-1">&#160;</script>
+			<script type="text/javascript" src="front/popper/popper.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/bootstrap/bootstrap-{$BOOTSTRAP-VERSION}-dist/js/bootstrap.min.js" charset="iso-8859-1">&#160;</script>
-			<!--script type="text/javascript" src="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/jquery-ui.min.js" charset="iso-8859-1">&#160;</script-->
+			<script type="text/javascript" src="front/jquery/jquery-ui-{$JQUERY-VERSION}.custom/jquery-ui.min.js" charset="iso-8859-1">&#160;</script>
 
 			<script type="text/javascript" src="front/js/commun.js" charset="iso-8859-1">&#160;</script>
 			<script type="text/javascript" src="front/js/communFormulaire.js" charset="iso-8859-1">&#160;</script>
@@ -92,7 +94,7 @@
 	</xsl:template>
 	<!-- barre de menu -->
 	<xsl:template name="BarreMenu">
-	<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top" data-toggle="affix">
+	<nav class="navbar navbar-expand-sm navbar-light bg_samsub fixed-top" data-toggle="affix">
 		<div class="mx-auto d-sm-flex d-block flex-sm-nowrap">
 			<a class="navbar-brand" href="#"><img src="front/images/logo_t.png" width="150" class="d-inline-block align-top" alt=""/></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
