@@ -9,6 +9,7 @@
         <script language="JavaScript" src="front/js/datepicker.js" type="text/javascript"/>
 		<script language="JavaScript" src="front/js/sendfile.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/gestionnews.js" type="text/javascript"/>
+		<script language="JavaScript" src="front/js/commun_rubnews.js" type="text/javascript"/>
     </xsl:template>
     <xsl:template name="Contenu">
 		<div class="row">
@@ -34,7 +35,7 @@
 						<input type="hidden" name="service" id="service"/>
 						<input type="hidden" name="newsid" id="newsid"/>
 						<div class="row">
-							<div class="col-sm-5">
+							<div class="col-sm-6">
 								<label class="col-form-label" for="titre">Titre</label>
 								<input class="form-control" size="40" name="titre" id="titre" tabindex="10" required="required"/>
 							</div>
@@ -44,10 +45,10 @@
 								<label class="col-form-label" for="titre">Date de publication</label>
 								<input class="form-control" size="40" name="datepublication" id="datepublication" tabindex="20" type="date" required="required"/>
 							</div>
-							<div class="col-sm-3">
+							<!--div class="col-sm-3">
 								<label class="col-form-label" for="etatpublication">Visibilite</label><br/>
 								<input class="custom-control-input" size="40" name="etatpublication" id="etatpublication" tabindex="30" type="checkbox" value="1"/>
-							</div>
+							</div-->
 						</div>
 						<div class="row">
 							<div class="col-sm-12">
@@ -60,15 +61,14 @@
 								<label class="col-form-label" for="contenu">Contenu</label>
 								<div id="summernote" required="required"/>
 							</div>
-							<div class="row justify-content-md-center">
-								<div class="col-md-auto">
-									<div class="col-sm-2" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">Valider</button>
-									</div>
-									<div class="col-sm-2" style="text-align:center;" onclick="fermerFormulaire()">
-										<button type="button" class="btn btn-primary">Annuler</button>
-									</div>
-								</div>
+						</div>
+						<br/>
+						<div class="row justify-content-md-center">
+							<div class="col col-lg-2">
+								<button type="submit" class="btn btn-primary btn-lg">Valider</button>
+							</div>
+							<div class="col col-lg-2">
+								<button type="button" class="btn btn-secondary btn-lg" id="btnfermerformulaire">Annuler</button>
 							</div>
 						</div>
 					</form>

@@ -8,6 +8,7 @@
         <script language="JavaScript" src="front/summernote/summernote.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/sendfile.js" type="text/javascript"/>
         <script language="JavaScript" src="front/js/gestionrubriques.js" type="text/javascript"/>
+        <script language="JavaScript" src="front/js/commun_rubnews.js" type="text/javascript"/>
     </xsl:template>
     <xsl:template name="Contenu">
 		<div class="row">
@@ -31,26 +32,24 @@
 					<form method="POST" action="#" onsubmit="return soumettre(this);" name="rubrique" id="rubrique">
 						<input type="hidden" name="service" id="service"/>
 						<input type="hidden" name="rubriqueid" id="rubriqueid"/>
-						<div class="row">
+						<div class="form-group">
 							<div class="col-sm-5">
 								<label class="col-form-label" for="titre">Titre</label>
 								<input class="form-control" size="40" name="titre" id="titre" tabindex="10"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="form-group">
 							<div class="col-sm-12">
 								<label class="col-form-label" for="contenu">Contenu</label>
 								<div id="summernote"/>
 							</div>
-							<div class="row">
-								<div class="form-group row">
-									<div class="col-sm-offset-4 col-sm-2" style="text-align:center;">
-										<button type="submit" class="btn btn-primary">Valider</button>
-									</div>
-									<div class="col-xs-2" style="text-align:center;" onclick="fermerFormulaire()">
-										<button type="button" class="btn btn-primary">Annuler</button>
-									</div>
-								</div>
+						</div>
+						<div class="row justify-content-md-center">
+							<div class="col col-lg-2">
+								<button type="submit" class="btn btn-primary btn-lg">Valider</button>
+							</div>
+							<div class="col col-lg-2">
+								<button type="button" class="btn btn-secondary btn-lg" id="btnfermerformulaire">Annuler</button>
 							</div>
 						</div>
 					</form>

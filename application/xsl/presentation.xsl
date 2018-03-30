@@ -18,22 +18,22 @@
 					<xsl:call-template name="onLoadTemplate"/>
 				</xsl:attribute>
 				<xsl:call-template name="BarreMenu"/>
-				<div class="container" style="margin-top:125px;">
+				<div class="container" style="margin-top:110px;">
 										
 					<xsl:choose>
 						<xsl:when test="$affichageLateral='O'">
 							
-								<div class="row">
+								<div class="row justify-content-md-center">
 									<img id="imgpres" class="img-responsive"/>
 									
-									<div class="col-sm-9">
+									<div class="col-lg-10">
 										<xsl:call-template name="Contenu"/>
 									</div>
 									
-									<div class="col-3">
+									<!--div class="col-3">
 										<xsl:call-template name="PaveUtilisateur"/>
 										<xsl:call-template name="LiensUtiles"/>
-									</div>
+									</div-->
 								</div>
 							
 						</xsl:when>
@@ -142,8 +142,9 @@
 						</li>
 					</xsl:if>
 					<li class="dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts<span class="caret"></span></a>
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contacts et liens utiles<span class="caret"></span></a>
 						<ul class="dropdown-menu">
+							<li><a class="dropdown-item" href="rubrique-16-liens-utiles.html">Liens utiles</a></li>
 							<li><a class="dropdown-item" href="contacts.html">Nous contacter</a></li>
 							<li><a class="dropdown-item" href="rubrique-9-nous-localiser.html">Nous localiser</a></li>
 						</ul>
