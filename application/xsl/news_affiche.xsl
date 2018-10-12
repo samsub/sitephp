@@ -15,7 +15,37 @@
         <br/>
         <br/>
     </xsl:template>
+	
+	<!--
+		Template news
+	-->
+	<xsl:template match="News">
 		
+		<div class="conteneur_news">
+			<div>
+				<h2 class="titre_news"><span class="oi oi-list"/>&#160;&#160;<xsl:value-of select="titre"/></h2>
+			</div>
+			<div>Publié le <xsl:value-of select="datepublication"/> par <xsl:value-of select="concat(associatedObjet/Auteur/Membre/prenom, ' ', associatedObjet/Auteur/Membre/nom)"/></div>
+			<xsl:choose>
+				<xsl:when test="introduction!=''">
+					<div class="contenu_news">
+						<p><xsl:value-of select="introduction"/></p>
+						<p class="text-right"><a href="#" class="btn btn-primary icon-goto after mt-d" type="lirelasuite" newsid="{newsid}">Lire la suite <span class="oi oi-chevron-right"/></a></p>
+					</div>
+				</xsl:when>
+				<xsl:otherwise>
+					<div class="contenu_news">
+						<xsl:value-of select="contenu" disable-output-escaping="yes"/>
+					</div>
+				</xsl:otherwise>
+			</xsl:choose>			
+		</div>	
+		<br/>
+	</xsl:template >
+	
+	<!--
+		Popup d'affichage des news
+	-->
 	<xsl:template name="popup">
 		<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="popupNews">
 			<div class="modal-dialog modal-lg">
@@ -35,30 +65,5 @@
 			</div>
 		</div>
 	</xsl:template>
-	
-	<xsl:template match="News">
-		
-		<div class="conteneur_news">
-			<div>
-				<h2 class="titre_news"><xsl:value-of select="titre"/></h2>
-			</div>
-			<div>Publié le <xsl:value-of select="datepublication"/> par <xsl:value-of select="concat(associatedObjet/Auteur/Membre/prenom, ' ', associatedObjet/Auteur/Membre/nom)"/></div>
-			<xsl:choose>
-				<xsl:when test="introduction!=''">
-					<div class="contenu_news">
-						<p><xsl:value-of select="introduction"/></p>
-						<p><a href="#" class="" type="lirelasuite" newsid="{newsid}">Lire la suite...</a></p>
-					</div>
-				</xsl:when>
-				<xsl:otherwise>
-					<div class="contenu_news">
-						<xsl:value-of select="contenu" disable-output-escaping="yes"/>
-					</div>
-				</xsl:otherwise>
-			</xsl:choose>
-		</div>	
-	</xsl:template >
-	
-	
 	
 </xsl:stylesheet>

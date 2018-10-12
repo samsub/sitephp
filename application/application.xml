@@ -7,6 +7,9 @@
 			<service name="deconnexion" classe="Login" methode="deconnexion" isPrivee="false" render="json"/>
 			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="false"  xsl="xsl/login.xsl"/>
 		</domaine>
+		<domaine name="diaporama">
+			<service name="affiche" classe="Factice" methode="fictive" isPrivee="false" xsl="xsl/diaporama.xsl"/>
+		</domaine>
 		<domaine name="mail">
 			<service name="contact" classe="Factice" methode="fictive" isPrivee="false" xsl="xsl/mail_formulaire.xsl"/>
 			<service name="envoi" classe="GestionMailContactService" methode="envoiMail" isPrivee="false" render="json"/>

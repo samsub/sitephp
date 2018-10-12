@@ -5,3 +5,4 @@ RewriteRule ^index.html$ /samsub/index.php
 RewriteRule ^administration.html$ /samsub/index.php?domaine=technique&service=login
 RewriteRule ^contacts.html$ /samsub/index.php?domaine=mail&service=contact
 RewriteRule ^news.html$ /samsub/index.php?domaine=news&service=affiche
+RewriteRule ^diaporama.html$ /samsub/index.php?domaine=diaporama&service=affiche
