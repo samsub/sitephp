@@ -8,9 +8,11 @@ $(document).ready(function() {
 // alimente le tableau des news
 /******************************************************/
 function alimenterNews() {
-
+	$('#numeroPage').val($.isNumeric($('#numeroPage').val())? $('#numeroPage').val():1);
+	var params = 'numeroPage='+$('#numeroPage').val();
 	$.ajax({
 		url: "index.php?domaine=news&service=getliste",
+		data: params,
 		dataType: 'json',
 		success : function(resultat, statut, erreur){
 			tab = document.getElementById('tableauResultat');
@@ -20,6 +22,10 @@ function alimenterNews() {
 			var nbpage = Math.ceil(total/resultat[0].nbLine);
 
 
+			$('#numeroPage').val(resultat[0].page);
+			$('#rch_page').val(resultat[0].page);
+			$('#max_page').val(resultat[0].totalPage);
+	
 			var nb=resultat[0].nbLine;
 			var tabJson = resultat[0].tabResult;
 			var i=0;
@@ -47,7 +53,7 @@ function editernews(newsid) {
 		document.news.service.value='create';
 		document.news.newsid.value='';
 		document.news.titre.value='';
-		$("input[name=etatpublication]").attr('checked', '');
+		$("input[name=etatpublication]").prop('checked', false);
 		document.news.datepublication.value='';
 		$('#summernote').summernote('destroy');
 		$('#summernote').html('');
@@ -71,9 +77,9 @@ function editernews(newsid) {
 				document.news.titre.value=json[0].titre;
 				document.news.datepublication.value=json[0].datepublication;
 				if (json[0].etatpublication==1) {
-					$("input[name=etatpublication]").attr('checked', 'checked');
+					$("input[name=etatpublication]").prop('checked', true);
 				} else {
-					$("input[name=etatpublication]").attr('checked', false);
+					$("input[name=etatpublication]").prop('checked', false);;
 				}
 				//on supprime et on ouvre l'éditeur
 				$('#summernote').summernote('destroy');

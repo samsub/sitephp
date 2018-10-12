@@ -27,10 +27,14 @@
 					</thead>
 					<tbody id="tbodyResultat"/>
 				</table>
+				<xsl:call-template name="paginationJson">
+					<xsl:with-param name="formulairePrincipal" select="'news'"/>
+				</xsl:call-template>
 			</div>
 			<div class="col-sm-9">
 				<div id="divFormulaire" style="display:none;">
-					<form method="POST" action="#" onsubmit="return soumettre(this);" name="news" id="news">
+					<form method="POST" action="#" onsubmit="return alimenterNews();" name="news" id="news">
+						<xsl:call-template name="formulaireJson"/>
 						<input type="hidden" name="service" id="service"/>
 						<input type="hidden" name="newsid" id="newsid"/>
 						<div class="row">

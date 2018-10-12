@@ -48,11 +48,16 @@ class GestionNewsService extends ServiceStub {
     }
 	
 	public function getListe(ContextExecution $p_contexte){
-        $requete = "SELECT newsid, titre, datepublication, contenu FROM news";
-		$listeLibelles = new ListDynamicObject();
-		$listeLibelles->name = 'ListeLibelles';
-		$listeLibelles->request($requete, 1);
-		$p_contexte->addDataBlockRow($listeLibelles);
+        $numeroPage=$p_contexte->m_dataRequest->getData('numeroPage');
+		$page=1;
+		if($numeroPage!=null && $numeroPage!='') {
+        	$page=$numeroPage;
+        }
+		$requete = "SELECT newsid, titre, datepublication, contenu FROM news ORDER BY datepublication DESC";
+		$listeNews = new ListDynamicObject();
+		$listeNews->name = 'ListeLibelles';
+		$listeNews->request($requete, $page);
+		$p_contexte->addDataBlockRow($listeNews);
     }
 	
 	public function affiche(ContextExecution $p_contexte){
@@ -61,8 +66,7 @@ class GestionNewsService extends ServiceStub {
         $auteur->name='Auteur';
         $l_clause=' userid=$parent->auteur'; 
         $auteur->setAssociatedRequest('Membre', $l_clause);
-        //$p_contexte->addDataBlockRow($listePeriode);
-		
+        
 		$listeNews = new ListObject();
 		$listeNews->name = 'NewsListe';
 		$listeNews->setAssociatedKey($auteur);

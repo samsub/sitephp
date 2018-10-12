@@ -9,6 +9,6 @@
 	</appender>
 	<root>
 		<appender_ref ref="default" />
-		<level value="error" />
+		<level value="debug" />
 	</root>
 </configuration>
