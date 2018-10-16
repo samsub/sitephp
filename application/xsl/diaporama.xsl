@@ -9,14 +9,17 @@
 		<center>
 		<section class="row" id="sectionDiaporama"/>
 		<br/>
+		
+		<br/>
+		<h5 id="titreDiapo"/>
+		<br/>
+		
 		<div class="diapo">
 			<ul class="diaporama1"/>
 		</div>
 		</center>
         <br/>
         <br/>
-		
-		
     </xsl:template>
 	<xsl:template name="js.module.sheet">
 		<script language="JavaScript" src="front/js/convertxml2json.js" type="text/javascript"/>

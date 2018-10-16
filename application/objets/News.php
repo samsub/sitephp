@@ -12,7 +12,11 @@ class News extends SavableObject {
 	
 	public $datepublication;
 	
+	public $archive;
+	
 	public $etatpublication;
+	
+	public $introduction;
 	
 	public $contenu;
 	

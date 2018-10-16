@@ -33,7 +33,7 @@
 			</div>
 			<div class="col-sm-9">
 				<div id="divFormulaire" style="display:none;">
-					<form method="POST" action="#" onsubmit="return alimenterNews();" name="news" id="news">
+					<form method="POST" action="#" onsubmit="return soumettre();" name="news" id="news">
 						<xsl:call-template name="formulaireJson"/>
 						<input type="hidden" name="service" id="service"/>
 						<input type="hidden" name="newsid" id="newsid"/>
@@ -51,6 +51,10 @@
 							<div class="col-sm-3">
 								<label class="col-form-label" for="etatpublication">Visibilite</label><br/>
 								<input class="custom-control-input" size="40" name="etatpublication" id="etatpublication" tabindex="30" type="checkbox" value="1"/>
+							</div>
+							<div class="col-sm-3">
+								<label class="col-form-label" for="archive">Archive</label><br/>
+								<input class="custom-control-input" size="40" name="archive" id="archive" tabindex="40" type="checkbox" value="1"/>
 							</div>
 						</div>
 						<div class="row">

@@ -59,3 +59,8 @@ ALTER TABLE `rubrique`
 (12, 'Horaires et lignes d\'eau', ''),
 (13, 'Les Sites de Plongées du SAM Subaquatiqu', ''),
 (14, 'Documents encadrants', '');
+
+
+--news archive
+ALTER TABLE `news` ADD `archive` TINYINT NOT NULL AFTER `datepublication`;
+

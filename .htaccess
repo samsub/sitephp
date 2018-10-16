@@ -6,3 +6,4 @@ RewriteRule ^administration.html$ /samsub/index.php?domaine=technique&service=lo
 RewriteRule ^contacts.html$ /samsub/index.php?domaine=mail&service=contact
 RewriteRule ^news.html$ /samsub/index.php?domaine=news&service=affiche
 RewriteRule ^diaporama.html$ /samsub/index.php?domaine=diaporama&service=affiche
+RewriteRule ^archive.html&page=([0-9]+)$ /samsub/index.php?domaine=news&service=archive&numeroPage=$1

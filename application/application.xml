@@ -5,7 +5,7 @@
 			<service name="login" classe="Login" methode="fictive" isPrivee="false"  xsl="xsl/login.xsl"/>
 			<service name="connexion" classe="Login" methode="connexion" isPrivee="false" render="json"/>
 			<service name="deconnexion" classe="Login" methode="deconnexion" isPrivee="false" render="json"/>
-			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="false"  xsl="xsl/login.xsl"/>
+			<service name="gentables" classe="GenerateurService" methode="create" isPrivee="true"  xsl="xsl/login.xsl"/>
 		</domaine>
 		<domaine name="diaporama">
 			<service name="affiche" classe="Factice" methode="fictive" isPrivee="false" xsl="xsl/diaporama.xsl"/>

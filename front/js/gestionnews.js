@@ -54,6 +54,7 @@ function editernews(newsid) {
 		document.news.newsid.value='';
 		document.news.titre.value='';
 		$("input[name=etatpublication]").prop('checked', false);
+		$("input[name=archive]").prop('checked', false);
 		document.news.datepublication.value='';
 		$('#summernote').summernote('destroy');
 		$('#summernote').html('');
@@ -81,6 +82,11 @@ function editernews(newsid) {
 				} else {
 					$("input[name=etatpublication]").prop('checked', false);;
 				}
+				if (json[0].archive==1) {
+					$("input[name=archive]").prop('checked', true);
+				} else {
+					$("input[name=archive]").prop('checked', false);;
+				}
 				//on supprime et on ouvre l'éditeur
 				$('#summernote').summernote('destroy');
 				$('#summernote').html(json[0].contenu);
@@ -104,15 +110,16 @@ function editernews(newsid) {
 // permet d'enregistrer une news en création et 
 // modification
 /******************************************************/
-function soumettre(form) {
+function soumettre() {
 	
 	$.ajax({
-		url:"index.php?domaine=news&service="+form.service.value,
+		url:"index.php?domaine=news&service="+$('#service').val(),
 		data: {
 			newsid: $("#newsid").val(),
 			titre: $("#titre").val(),
 			datepublication: $("#datepublication").val(),
 			etatpublication: $("#etatpublication").is(':checked'),
+			archive: $("#archive").is(':checked'),
 			contenu: $('#summernote').summernote('code')
 		},
 		method:'POST',

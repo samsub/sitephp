@@ -70,7 +70,6 @@ class GestionNewsService extends ServiceStub {
     }
 	
 	public function affiche(ContextExecution $p_contexte){
-		
 		$auteur = new ListObject();
         $auteur->name='Auteur';
         $l_clause=' userid=$parent->auteur'; 
@@ -79,10 +78,28 @@ class GestionNewsService extends ServiceStub {
 		$listeNews = new ListObject();
 		$listeNews->name = 'NewsListe';
 		$listeNews->setAssociatedKey($auteur);
-		$clause = ' etatpublication=1 ORDER BY datepublication DESC';
+		$clause = ' etatpublication=1 AND archive=0 ORDER BY datepublication DESC';
 		$listeNews->request('News', $clause);
 		$p_contexte->addDataBlockRow($listeNews);
 	}
 	
+	public function archive(ContextExecution $p_contexte){
+		$numeroPage=$p_contexte->m_dataRequest->getData('numeroPage');
+		$page=1;
+		if($numeroPage!=null && $numeroPage!='') {
+        	$page=$numeroPage;
+        }
+		$auteur = new ListObject();
+        $auteur->name='Auteur';
+        $l_clause=' userid=$parent->auteur'; 
+        $auteur->setAssociatedRequest('Membre', $l_clause);
+        
+		$listeNews = new ListObject();
+		$listeNews->name = 'NewsListe';
+		$listeNews->setAssociatedKey($auteur);
+		$clause = ' etatpublication=1 AND archive=1 ORDER BY datepublication DESC';
+		$listeNews->request('News', $clause);
+		$p_contexte->addDataBlockRow($listeNews, $page);
+	}
 }
 ?>
